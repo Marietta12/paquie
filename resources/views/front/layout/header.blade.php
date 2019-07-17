@@ -22,8 +22,8 @@
 
 				<div class="topbar-language rs1-select2">
 					<select class="selection-1" name="time">
-						<option>USD</option>
-						<option>EUR</option>
+						<option>Ariary</option>
+						<option>Fmg</option>
 					</select>
 				</div>
 			</div>
@@ -190,7 +190,7 @@
 				<nav class="menu">
 					<ul class="main_menu">
 						<li>
-							<a href="{{ route('home') }}">Accueil</a>
+							<a href="{{ url('/') }}">Accueil</a>
 						</li>
 
 						<li>

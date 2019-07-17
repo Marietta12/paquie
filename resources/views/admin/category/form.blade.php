@@ -41,7 +41,7 @@
                     <label for="inputPhoto" class="col-sm-3 control-label">Photo</label>
 
                     <div class="col-sm-9">
-                      <input type="file" name="inputPhoto" class="form-control" id="inputPhoto" value="{{ ($category) ? $category->photo : '' }}>
+                      <input type="file" name="inputPhoto" class="form-control" id="inputPhoto" value="{{ ($category) ? $category->photo : '' }}">
                     </div>
                   </div>
                   

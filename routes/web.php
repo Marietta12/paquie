@@ -1,4 +1,5 @@
 <?php
+use App\Category;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,7 +14,8 @@
 
 Route::get('/', function () {
     // return view('welcome');
-    return view('front.home.index');
+    $categories = Category::orderBy('id','desc')->get();
+    return view('front.home.index', compact('categories'));
 })->name('home');
 
 Auth::routes();

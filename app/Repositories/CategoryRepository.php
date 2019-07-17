@@ -3,7 +3,7 @@
 namespace App\Repositories;
 
 use App\Interfaces\CategoryRepositoryInterface;
-Use App\Category;
+use App\Category;
 
 class CategoryRepository implements CategoryRepositoryInterface
 {
