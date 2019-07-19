@@ -133,6 +133,21 @@ return [
             'text'        => 'Ordre de commande',
             'url'         => 'admin/command',
             'icon'        => 'shopping-cart',
+            'submenu'     => [
+                    [
+                         'text' => 'Non traité',
+                         'url'  => '#',
+                    ],
+                    [
+                         'text'    => 'Traité',
+                         'url'     => '#',
+                    ],
+                   [
+                         'text'    => 'Terminé',
+                          'url'     => '#',
+                    ],
+                ]
+
         ],
         [
             'text'        => 'Ordre de produit',
