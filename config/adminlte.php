@@ -113,19 +113,14 @@ return [
             'text'        => 'Dashboard',
             'url'         => 'admin/home',
             'icon'        => 'dashboard',
-        ],
-        [
-            'text'        => 'Gestion utilisateurs',
-            'url'         => 'admin/user',
-            'icon'        => 'user',
-        ],
+        ],        
         [
             'text'        => 'Categories',
             'url'         => 'admin/category',
             'icon'        => 'sticky-note-o',
         ],
         [
-            'text'        => 'Produit',
+            'text'        => 'Produits',
             'url'         => 'admin/product',
             'icon'        => 'rub',
         ],
@@ -155,11 +150,15 @@ return [
             'icon'        => 'credit-card',
         ],*/
         [
-            'text'        => 'Blog',
+            'text'        => 'Blogs',
             'url'         => 'admin/blog',
             'icon'        => 'building-o',
         ],
-
+        [
+            'text'        => 'Gestion utilisateurs',
+            'url'         => 'admin/user',
+            'icon'        => 'user',
+        ],
        
         'CONFIGURATION',
         [

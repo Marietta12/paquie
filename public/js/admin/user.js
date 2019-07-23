@@ -30,7 +30,7 @@ $(document).ready(function() {
       }
      });
       
-          $last = $('.user-update .profile-username').text();
+      $last = $('.user-update .profile-username').text();
 
       $('.user-update').on('keyup','#inputName',function(){
           if($(this).val()!=""){
@@ -39,12 +39,24 @@ $(document).ready(function() {
             $('.user-update .profile-username').text($last);
           }
       });
+
+      $lastp = $('.user-profil .profile-update').text();
+
+      $('.user-profil').on('keyup','#inputName',function(){
+          if($(this).val()!=""){
+            $('.user-profil .profile-update').text($(this).val());
+          }else{
+            $('.user-profil .profile-update').text($lastp);
+          }
+      });
+
       $('#inputPhoto').on('change', function(){
         if (this.files && this.files[0]) {
             var reader = new FileReader();
 
             reader.onload = function (e) {
                 $('.user-update .img-profil').attr('src', e.target.result);
+                $('.user-profil .img-profil').attr('src', e.target.result);
             }
     
             reader.readAsDataURL(this.files[0]);

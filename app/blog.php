@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\User;
 
 class blog extends Model
 {
@@ -16,4 +17,8 @@ class blog extends Model
     protected $fillable = [
         'title', 'description','photo'
     ];
+
+    public function user(){
+        return $this->hasOne(User::class, 'id', 'user_id');
+    }
 }

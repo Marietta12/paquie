@@ -13,7 +13,7 @@
 @section('content')
     <section class="user-update">
         <div class="row">
-        <div class="col-md-9">
+        <div class="col-md-12">
           <div class="nav-tabs-custom">
             <ul class="nav nav-tabs">
               <li class="active" style="width: 100%;"><a href="#settings" data-toggle="tab" aria-expanded="true" style="font-size: 18px; font-weight: bold;">Informations Blog</a></li>
@@ -24,28 +24,28 @@
                   {!! Form::open(array('url' => ($blog) ? route('blog.update', ['blog' => $blog->id]) : route('blog.store'),'files' => true,'class'=>'form-horizontal','id'=>'form-profil','method'=>($blog) ? 'PATCH' : 'POST')) !!}
 
                   <div class="form-group">
-                    <label for="inputTitle" class="col-sm-3 control-label">Titre</label>
+                    <label for="inputTitle" class="col-sm-2 control-label">Titre</label>
                     <input type="hidden" name="id" value="{{($blog) ? $blog->id : ''}}">
                     <div class="col-sm-9">
                       <input type="text" name="inputTitle" class="form-control" id="inputTitle" placeholder="Titre" value="{{ ($blog) ? $blog->title : '' }}">
                     </div>
                   </div>    
                    <div class="form-group">
-                    <label for="inputTitle" class="col-sm-3 control-label">User_id</label>
+                    <label for="inputTitle" class="col-sm-2 control-label">User_id</label>
                     <input type="hidden" name="id" value="{{($blog) ? $blog->id : ''}}">
                     <div class="col-sm-9">
                       <input type="text" name="inputIdUser" class="form-control" id="inputIdUser" placeholder="User Id" value="{{ ($blog) ? $blog->user_id : '' }}">
                     </div>
                   </div>                  
                   <div class="form-group">
-                    <label for="inputDescription" class="col-sm-3 control-label">Description</label>
+                    <label for="inputDescription" class="col-sm-2 control-label">Description</label>
 
                     <div class="col-sm-9">
                       <input type="text" name="inputDescription" class="form-control" id="inputDescription" placeholder="Description" value="{{ ($blog) ? $blog->description : '' }}">
                     </div>
                   </div>                  
                   <div class="form-group">
-                    <label for="inputPhoto" class="col-sm-3 control-label">Photo</label>
+                    <label for="inputPhoto" class="col-sm-2 control-label">Photo</label>
 
                     <div class="col-sm-9">
                       <input type="file" name="inputPhoto" class="form-control" id="inputPhoto" value="{{ ($blog) ? $blog->photo : '' }}">
@@ -53,7 +53,7 @@
                   </div>
                   
                   <div class="form-group">
-                    <div class="col-sm-12">
+                    <div class="col-sm-11">
                       <button type="submit" class="btn pull-right  btn-success">Enregistrer</button>
                     </div>
                   </div>

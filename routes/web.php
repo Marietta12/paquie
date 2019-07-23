@@ -1,6 +1,7 @@
 <?php
 use App\Category;
 use App\Product;
+use App\Blog;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,8 +16,9 @@ use App\Product;
 Route::get('/', function () {
     // return view('welcome');
     $categories = Category::orderBy('id','desc')->get();
-    $products = Product::orderBy('id','desc')->limit(10)->get();
-    return view('front.home.index', compact('categories','products'));
+    $products = Product::orderBy('id','desc')->limit(10)->get();    
+    $blogs = Blog::with('user')->orderBy('id','desc')->limit(3)->get();
+    return view('front.home.index', compact('categories','products','blogs'));
 })->name('home');
 
 Auth::routes();
