@@ -23,8 +23,10 @@ class ProductController extends Controller
     	return view('front.product.index', compact('products'));
     }
 
-    public function detailProduct()
+    public function detailProduct($id)
     {
-    	return view('front.product.detailproduct');
+        $product = $this->product_repository->findProduct($id);
+        //dd($product);
+    	return view('front.product.detailproduct',compact('product'));
     }
 }
