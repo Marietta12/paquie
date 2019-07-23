@@ -3060,21 +3060,15 @@ TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT
 
 .s-text7 {
 	font-family: Montserrat-Regular;
+	font-size: 13px;
 	color: white;
-	font-size: 13px;	
-	line-height: 1.8;
-}
-
-.s-text7-1 {
-	font-family: Montserrat-Regular;	
-	font-size: 13px;	
 	line-height: 1.8;
 }
 
 .s-text8, .s-text8 a {
 	font-family: Montserrat-Regular;
 	font-size: 13px;
-	color: white;
+	color: #888888;
 	line-height: 1.8;
 }
 
@@ -3184,10 +3178,11 @@ TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT
 */
 .m-text1 {
 	font-family: Montserrat-Regular;
-	font-size: 18px;
+	font-size: 25px;
 	color: white;
 	line-height: 1.5;
 	letter-spacing: 2px;
+	font-weight: bold;
 }
 
 .m-text2 {
@@ -4129,7 +4124,7 @@ RESPONSIVE  RESPONSIVE  RESPONSIVE  RESPONSIVE   RESPONSIVE
 		border-bottom: 1px solid #d9d9d9;
 	}
 }
-	
+
 /*[ SSM ]
 ///////////////////////////////////////////////////////////
 */

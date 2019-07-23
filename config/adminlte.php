@@ -154,6 +154,11 @@ return [
             'url'         => 'admin/order_product',
             'icon'        => 'credit-card',
         ],
+        [
+            'text'        => 'Blog',
+            'url'         => 'admin/blog',
+            'icon'        => 'building-o',
+        ],
 
         // [
         //     'text'    => 'Multilevel',
