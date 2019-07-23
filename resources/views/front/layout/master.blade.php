@@ -32,6 +32,8 @@
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="vendor/lightbox2/css/lightbox.min.css">
 <!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/noui/nouislider.min.css">
+<!--===============================================================================================-->
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/front/util.css">
 	<link rel="stylesheet" type="text/css" href="css/front/main.css">

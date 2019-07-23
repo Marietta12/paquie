@@ -4,31 +4,30 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Repositories\CategoryRepository;
-use App\Interfaces\CategoryRepositoryInterface;
+use App\Repositories\BlogRepository;
+use App\Interfaces\BlogRepositoryInterface;
 use Illuminate\Support\Facades\Redirect;
 use Yajra\DataTables\Facades\DataTables;
 use App\Service\UploadService;
 use Illuminate\Support\Facades\Validator;
 
-class CategoryController extends Controller
+class BlogController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    protected $category_repository;
+    protected $blog_repository;
     protected $upload_service;
-    public function __construct(CategoryRepository $category_repository ,UploadService $upload){
-        $this->category_repository = $category_repository;
+    public function __construct(BlogRepository $blog_repository ,UploadService $upload){
+        $this->blog_repository = $blog_repository;
         $this->upload_service = $upload;
     }
-    
+
     public function index()
     {
-        return view('admin.category.list');
-        
+        return view('admin.blog.list');
     }
 
     /**
@@ -38,8 +37,8 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        $category = false;
-        return view('admin.category.form',compact('category'));
+        $blog = false;
+        return view('admin.blog.form',compact('blog'));
     }
 
     /**
@@ -62,15 +61,15 @@ class CategoryController extends Controller
             try{
 
                 $input = $this->uploadImage($request);
-                $categories = $this->category_repository->createCategory($input);
+                $blogs = $this->blog_repository->createBlog($input);
             }catch(\Exception $e){
                 dd('error');
                 return Redirect::back()->withInput()->withErrors($e->getMessage());
             }
-            toastr()->success('Ajout catégories réussie!');
+            toastr()->success('Ajout blog réussie!');
             /*return redirect()->route('category.form');*/
-            $category = false;
-            return view("admin/category/list");
+            $blog = false;
+            return view("admin/blog/list");
         }
     }
 
@@ -93,8 +92,8 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        $category = $this->category_repository->findCategory($id);
-        return view('admin.category.form',compact('category'));
+        $blog = $this->blog_repository->findBlog($id);
+        return view('admin.blog.form',compact('blog'));
     }
 
     /**
@@ -106,7 +105,6 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
         $rules = array(    
             'inputTitle' => 'required',        
             'inputDescription' => 'required',
@@ -119,14 +117,14 @@ class CategoryController extends Controller
             try{
                 //$input= $request->all();
                 $input = $this->uploadImage($request); 
-                $categories = $this->category_repository->updateCategory($id,$input);
+                $blogs = $this->blog_repository->updateBlog($id,$input);
             }catch(\Exception $e){
                 return Redirect::back()->withInput()->withErrors($e->getMessage());
             }
             toastr()->success('Modification réussie!');
             // return redirect()->route('admin.category.form');
-            $categories = $this->category_repository->getAllCategory();
-            return view('admin.category.list',compact('categories'));
+            $blogs = $this->blog_repository->getAllBlog();
+            return view('admin.blog.list',compact('blogs'));
         }
     }
 
@@ -138,20 +136,19 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        //
-        $this->category_repository->deleteCategory($id);
+        $this->blog_repository->deleteBlog($id);
         toastr()->success('Suppression réussie!');
-        $categories = $this->category_repository->getAllCategory();
-        return view('admin.category.list',compact('categories'));
+        $blogs = $this->blog_repository->getAllBlog();
+        return view('admin.blog.list',compact('blogs'));
     }
-    
-    public function uploadImage($request)
+
+     public function uploadImage($request)
     {
         $image_name = null;
         if ($request->hasFile('inputPhoto')) {
             $file = $request->file('inputPhoto');
             try {
-                $image_name = $this->upload_service->upload($file, 'image/Categories');
+                $image_name = $this->upload_service->upload($file, 'image/Blog');
             } catch (\Exception $e) {
                 flash()->error($e->getMessage());
                 return Redirect::back();
@@ -162,21 +159,21 @@ class CategoryController extends Controller
         return $input;
     }
 
-    public function getAll(){
-        $categories = $this->category_repository->getAllCategory();
+     public function getAll(){
+        $blogs = $this->blog_repository->getAllBlog();
         //$data_tables = collect([]);
         //return view('admin.user.list',compact('users'));
-        $data_tables = DataTables::collection($categories);
-        $data_tables->EditColumn('title', function ($category) {
+        $data_tables = DataTables::collection($blogs);
+        $data_tables->EditColumn('title', function ($blog) {
                            
-        })->EditColumn('title', function ($category) {
-            if(isset($category->title))    
-                return $category->title;
-        })->EditColumn('description', function ($category) {
-            if(isset($category->description)) 
-                return $category->description;
-        })->EditColumn('action', function ($category) {
-            return view("admin.category.action", ['admin' => $category]);
+        })->EditColumn('title', function ($blog) {
+            if(isset($blog->title))    
+                return $blog->title;
+        })->EditColumn('description', function ($blog) {
+            if(isset($blog->description)) 
+                return $blog->description;
+        })->EditColumn('action', function ($blog) {
+            return view("admin.blog.action", ['admin' => $blog]);
         });
         return $data_tables->rawColumns(['title','description','action'])->make(true);
     }
@@ -190,10 +187,4 @@ class CategoryController extends Controller
         }
         return response()->json(['brand_array' => $brand_array]);
     }
-
-
 }
-
-
-
-

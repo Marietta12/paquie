@@ -32,7 +32,7 @@
 		<div class="wrap_header">
 			<!-- Logo -->
 			<a href="index.html" class="logo">
-				<img src="images/logo restomenu final.png" alt="IMG-LOGO">
+				<img src="images/logo restomenu final v2.png" alt="IMG-LOGO">
 			</a>
 
 			<!-- Menu -->
@@ -182,7 +182,7 @@
 		<div class="wrap_header">
 			<!-- Logo -->
 			<a href="index.html" class="logo">
-				<img src="images/logo restomenu final.png" alt="IMG-LOGO">
+				<img src="images/logo restomenu final v2.png" alt="IMG-LOGO">
 			</a>
 
 			<!-- Menu -->
