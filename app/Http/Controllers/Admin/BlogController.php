@@ -161,8 +161,6 @@ class BlogController extends Controller
 
      public function getAll(){
         $blogs = $this->blog_repository->getAllBlog();
-        //$data_tables = collect([]);
-        //return view('admin.user.list',compact('users'));
         $data_tables = DataTables::collection($blogs);
         $data_tables->EditColumn('title', function ($blog) {
                            

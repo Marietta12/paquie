@@ -28,7 +28,6 @@ jQuery(document).ready(function () {
             columns        : [
                 {data: 'title', name:'title',searchable: true, sortable: true},
                 {data: 'description', name:'description',searchable: true, sortable: true},
-                {data: 'photo', name:'photo',searchable: true, sortable:true},
                 {data: 'action', name:'action',searchable: false, sortable: false}               
             ],
             fnDrawCallback : function () {

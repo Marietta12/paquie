@@ -22,8 +22,7 @@
                             <thead>
                             <tr>
                                 <th>Titre</th>
-                                <th>Description</th>
-                                <th>Photo</th>                                
+                                <th>Description</th>                           
                                 <th class="no-sort">Action</th>
                             </tr>
                             </thead>

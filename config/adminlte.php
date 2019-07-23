@@ -149,55 +149,18 @@ return [
                 ]
 
         ],
-        [
+        /*[
             'text'        => 'Ordre de produit',
             'url'         => 'admin/order_product',
             'icon'        => 'credit-card',
-        ],
+        ],*/
         [
             'text'        => 'Blog',
             'url'         => 'admin/blog',
             'icon'        => 'building-o',
         ],
 
-        // [
-        //     'text'    => 'Multilevel',
-        //     'icon'    => 'share',
-        //     'submenu' => [
-        //         [
-        //             'text' => 'Level One',
-        //             'url'  => '#',
-        //         ],
-        //         [
-        //             'text'    => 'Level One',
-        //             'url'     => '#',
-        //             'submenu' => [
-        //                 [
-        //                     'text' => 'Level Two',
-        //                     'url'  => '#',
-        //                 ],
-        //                 [
-        //                     'text'    => 'Level Two',
-        //                     'url'     => '#',
-        //                     'submenu' => [
-        //                         [
-        //                             'text' => 'Level Three',
-        //                             'url'  => '#',
-        //                         ],
-        //                         [
-        //                             'text' => 'Level Three',
-        //                             'url'  => '#',
-        //                         ],
-        //                     ],
-        //                 ],
-        //             ],
-        //         ],
-        //         [
-        //             'text' => 'Level One',
-        //             'url'  => '#',
-        //         ],
-        //     ],
-        // ],
+       
         'CONFIGURATION',
         [
             'text' => 'Profile',

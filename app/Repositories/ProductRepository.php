@@ -55,10 +55,5 @@ class ProductRepository implements ProductRepositoryInterface
     public function deleteProduct($product_id){
         return $this->model->where('id', $product_id)->delete();
     }
-
-    public function getProduct(){
-        return $this->model->where('product')->orderBy('id', 'desc')->();
-    }
-
     
 }
