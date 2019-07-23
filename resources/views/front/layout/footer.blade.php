@@ -2,12 +2,12 @@
 	<div class="flex-w p-b-35">
 		<div class="w-size6 p-t-30 p-l-15 p-r-15 respon3">
 			<h4 class="s-text12 p-b-30">
-				GET IN TOUCH
+				Des questions?
 			</h4>
 
-			<div>
+			<div>				
 				<p class="s-text7 w-size27">
-					Des questions?Veuillez nous contacter par +261323457138
+					Veuillez nous contacter par <strong>+261.32.34.571.38</strong>
 				</p>
 
 				<div class="flex-m p-t-30">
@@ -106,7 +106,7 @@
 
 		<div class="w-size8 p-t-30 p-l-15 p-r-15 respon3">
 			<h4 class="s-text12 p-b-30">
-				Nouveau lettre
+				Newsletters
 			</h4>
 
 			<form>

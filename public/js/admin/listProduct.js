@@ -32,7 +32,6 @@ jQuery(document).ready(function () {
             columns        : [
                 {data: 'title', name:'title',searchable: true, sortable: true},
                 {data: 'description', name:'description',searchable: true, sortable: true},
-                {data: 'photo', name:'photo',searchable: true, sortable:true},
                 {data: 'prix', name:'prix',searchable: true, sortable:true},
                 {data: 'category_id', name:'category_id',searchable: true, sortable:true},
                 {data: 'action', name:'action',searchable: false, sortable: false}               

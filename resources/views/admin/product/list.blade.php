@@ -23,7 +23,6 @@
                             <tr>
                                 <th>Titre</th>
                                 <th>Description</th>
-                                <th>Photo</th>
                                 <th>Prix</th>
                                 <th>Catégories</th>              
                                 <th class="no-sort">Action</th>

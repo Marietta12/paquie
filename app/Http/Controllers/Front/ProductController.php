@@ -5,13 +5,21 @@ namespace App\Http\Controllers\Front;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Product;
+use App\Interfaces\ProductRepositoryInterface;
 
 
 class ProductController extends Controller
 {
+
+	protected $product_repository;
+    
+    public function __construct(ProductRepositoryInterface $product_repository){
+        $this->product_repository = $product_repository;
+    }
+    
     public function index()
     {
-    	$products = Product::orderBy('id','desc')->get();
+    	$products = $this->product_repository->getAllProduct();
     	return view('front.product.index', compact('products'));
     }
 

@@ -170,15 +170,10 @@ class ProductController extends Controller
     }
 
     public function getAll(){
-        //LaravelChromeLogger::log("On est dans la fonction getAll()");
         $products = $this->product_repository->getAllProduct();
-        //LaravelChromeLogger::log($product);
-        //$data_tables = collect([]);
-        //return view('admin.user.list',compact('users'));
         $data_tables = DataTables::collection($products);
-        $data_tables/*->EditColumn('title', function ($product) {
-                           
-        })*/->EditColumn('title', function ($product) {
+        
+        $data_tables->EditColumn('title', function ($product) {
             if(isset($product->title))    
                 return $product->title;
         })->EditColumn('description', function ($product) {
@@ -188,7 +183,6 @@ class ProductController extends Controller
         if(isset($product->prix)) 
             return $product->prix;
         })->EditColumn('category_id', function ($product) {
-            //dd($product->category->title);
             if(isset($product->category->title))
                 return $product->category->title;
         })->EditColumn('action', function ($product) {

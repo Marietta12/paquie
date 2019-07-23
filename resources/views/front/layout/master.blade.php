@@ -98,7 +98,7 @@
 		$('.block2-btn-addwishlist').each(function(){
 			var nameProduct = $(this).parent().parent().parent().find('.block2-name').html();
 			$(this).on('click', function(){
-				swal(nameProduct, "is added to wishlist !", "success");
+				swal(nameProduct, "est ajouté dans le wishlist !", "success");
 			});
 		});
 	</script>

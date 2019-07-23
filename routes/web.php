@@ -1,6 +1,6 @@
 <?php
 use App\Category;
-
+use App\Product;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,7 +15,8 @@ use App\Category;
 Route::get('/', function () {
     // return view('welcome');
     $categories = Category::orderBy('id','desc')->get();
-    return view('front.home.index', compact('categories'));
+    $products = Product::orderBy('id','desc')->limit(10)->get();
+    return view('front.home.index', compact('categories','products'));
 })->name('home');
 
 Auth::routes();

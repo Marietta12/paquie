@@ -12,12 +12,12 @@
 			</div>
 
 			<span class="topbar-child1">
-				Free shipping for standard order over $100
+				Bienvenue dans <strong>RESTOMENU</strong>
 			</span>
 
 			<div class="topbar-child2">
 				<span class="topbar-email">
-					fashe@example.com
+					marietta@restomenu.mg
 				</span>
 
 				<div class="topbar-language rs1-select2">
@@ -31,7 +31,7 @@
 
 		<div class="wrap_header">
 			<!-- Logo -->
-			<a href="index.html" class="logo">
+			<a href="{{ url('/') }}" class="logo">
 				<img src="images/logo restomenu final.png" alt="IMG-LOGO">
 			</a>
 
@@ -162,12 +162,12 @@
 			</div>
 
 			<span class="topbar-child1">
-				Free shipping for standard order over $100
+				Bienvenue dans <strong>RESTOMENU</strong>
 			</span>
 
 			<div class="topbar-child2">
 				<span class="topbar-email">
-					fashe@example.com
+					marietta@restomenu.mg
 				</span>
 
 				<div class="topbar-language rs1-select2">
@@ -181,7 +181,7 @@
 
 		<div class="wrap_header">
 			<!-- Logo -->
-			<a href="index.html" class="logo">
+			<a href="{{ url('/') }}" class="logo">
 				<img src="images/logo restomenu final.png" alt="IMG-LOGO">
 			</a>
 

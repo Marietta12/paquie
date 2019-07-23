@@ -163,8 +163,6 @@ class CategoryController extends Controller
 
     public function getAll(){
         $categories = $this->category_repository->getAllCategory();
-        //$data_tables = collect([]);
-        //return view('admin.user.list',compact('users'));
         $data_tables = DataTables::collection($categories);
         $data_tables->EditColumn('title', function ($category) {
                            
