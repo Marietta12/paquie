@@ -64,25 +64,25 @@
 
 			<ul>
 				<li class="p-b-9">
-					<a href="#" class="s-text7">
+					<a href="{{ route('front_product') }}" class="s-text7">
 						Produit
 					</a>
 				</li>
 
 				<li class="p-b-9">
-					<a href="#" class="s-text7">
+					<a href="{{ route('front_blog') }}" class="s-text7">
 						Blog
 					</a>
 				</li>
 
 				<li class="p-b-9">
-					<a href="#" class="s-text7">
+					<a href="{{ route('front_about') }}" class="s-text7">
 						A propos
 					</a>
 				</li>
 
 				<li class="p-b-9">
-					<a href="#" class="s-text7">
+					<a href="{{ route('front_contact') }}" class="s-text7">
 						Contact
 					</a>
 				</li>

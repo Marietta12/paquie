@@ -68,7 +68,7 @@ Route::namespace('Front')->group(function () {
     Route::get('/product', 'ProductController@index')->name('front_product');
     Route::get('/detail_product/{id}', 'ProductController@detailproduct')->name('front_detailproduct');
     Route::get('/blog', 'BlogController@index')->name('front_blog');
-    Route::get('/detail_blog', 'BlogController@index')->name('front_detailblog');
+    Route::get('/detail_blog/{id}', 'BlogController@detailBlog')->name('front_detailblog');
     Route::get('/contact', 'ContactController@index')->name('front_contact');
     Route::get('/about', 'AboutController@index')->name('front_about');
     

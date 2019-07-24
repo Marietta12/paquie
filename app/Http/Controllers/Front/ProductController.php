@@ -26,7 +26,6 @@ class ProductController extends Controller
     public function detailProduct($id)
     {
         $product = $this->product_repository->findProduct($id);
-        //dd($product);
     	return view('front.product.detailproduct',compact('product'));
     }
 }

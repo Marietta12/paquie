@@ -5,14 +5,14 @@
     <section class="slide1">
         <div class="wrap-slick1">
             <div class="slick1">
-                <div class="item-slick1 item1-slick1" style="background-image: url(images/appetizer-bowl-ceramic-764925.jpg);">
+                <div class="item-slick1 item1-slick1" style="background-image: url(images/112.jpg);">
                     <div class="wrap-content-slide1 sizefull flex-col-c-m p-l-15 p-r-15 p-t-150 p-b-170">
                         <span class="caption1-slide1 m-text1 t-center animated visible-false m-b-15" data-appear="fadeInDown">
                             Produit
                         </span>
 
                         <h2 class="caption2-slide1 xl-text1 t-center animated visible-false m-b-37" data-appear="fadeInUp">
-                            Nouvelle menu
+                            Nouveau menu
                         </h2>
 
                         <div class="wrap-btn-slide1 w-size1 animated visible-false" data-appear="zoomIn">
@@ -31,7 +31,7 @@
                         </span>
 
                         <h2 class="caption2-slide1 xl-text1 t-center animated visible-false m-b-37" data-appear="lightSpeedIn">
-                            Nouvelle produit
+                            Nouveau menu
                         </h2>
 
                         <div class="wrap-btn-slide1 w-size1 animated visible-false" data-appear="slideInUp">
@@ -50,7 +50,7 @@
                         </span>
 
                         <h2 class="caption2-slide1 xl-text1 t-center animated visible-false m-b-37" data-appear="rotateInUpRight">
-                            Nouvelle produit
+                            Nouveau menu
                         </h2>
 
                         <div class="wrap-btn-slide1 w-size1 animated visible-false" data-appear="rotateIn">
@@ -76,7 +76,7 @@
                 <div class="col-sm-10 col-md-8 col-lg-4 m-l-r-auto">
                     <!-- block1 -->
                     <div class="block1 hov-img-zoom pos-relative m-b-30">
-                        <img src="images/banner-07.jpg" alt="IMG-BENNER">
+                        <img src="images/freshly-made-salad-tom-gowanlock.jpg" alt="IMG-BENNER">
 
                         <div class="block1-wrapbtn w-size2">
                             <!-- Button -->
@@ -88,7 +88,7 @@
 
                     <!-- block1 -->
                     <div class="block1 hov-img-zoom pos-relative m-b-30">
-                        <img src="images/banner-05.jpg" alt="IMG-BENNER">
+                        <img src="images/720-932.jpg" alt="IMG-BENNER">
 
                         <div class="block1-wrapbtn w-size2">
                             <!-- Button -->
@@ -102,7 +102,7 @@
                 <div class="col-sm-10 col-md-8 col-lg-4 m-l-r-auto">
                     <!-- block1 -->
                     <div class="block1 hov-img-zoom pos-relative m-b-30">
-                        <img src="images/banner-03.jpg" alt="IMG-BENNER">
+                        <img src="images/banana-cherry-chocolate-2425.jpg" alt="IMG-BENNER">
 
                         <div class="block1-wrapbtn w-size2">
                             <!-- Button -->
@@ -114,7 +114,7 @@
 
                     <!-- block1 -->
                     <div class="block1 hov-img-zoom pos-relative m-b-30">
-                        <img src="images/banner-07.jpg" alt="IMG-BENNER">
+                        <img src="images/vitamins-winter-2.jpg" alt="IMG-BENNER">
 
                         <div class="block1-wrapbtn w-size2">
                             <!-- Button -->
@@ -232,7 +232,7 @@
 
                         <div class="block3-txt p-t-14">
                             <h4 class="p-b-7">
-                                <a href="{{ route('front_blog') }}" class="m-text11">
+                                <a href="{{ route('front_detailblog', ['id'=>$blog->id]) }}" class="m-text11">
                                     {{$blog->title}}
                                 </a>
                             </h4>

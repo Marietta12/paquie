@@ -10,7 +10,7 @@
 					<div class="p-r-50 p-r-0-lg">
 						<div class="p-b-40">
 							<div class="blog-detail-img wrap-pic-w">
-								<img src="images/blog-04.jpg" alt="IMG-BLOG">
+								<img src="{{ url('image/Blogs/'.$blog->photo.'') }}" alt="IMG-BLOG">
 							</div>
 
 							<div class="blog-detail-txt p-t-33">
@@ -25,7 +25,7 @@
 									</span>
 
 									<span>
-										28 Dec, 2018
+										{{ ($blog) ? $blog->created_at : '' }}
 										<span class="m-l-3 m-r-6">|</span>
 									</span>
 
