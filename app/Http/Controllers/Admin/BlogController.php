@@ -170,10 +170,13 @@ class BlogController extends Controller
         })->EditColumn('description', function ($blog) {
             if(isset($blog->description)) 
                 return $blog->description;
+        })->EditColumn('photo', function ($blog) {
+            if(isset($blog->photo)) 
+                return $blog->photo;
         })->EditColumn('action', function ($blog) {
             return view("admin.blog.action", ['admin' => $blog]);
         });
-        return $data_tables->rawColumns(['title','description','action'])->make(true);
+        return $data_tables->rawColumns(['title','description','photo','action'])->make(true);
     }
 
     public function getFilterList()

@@ -11,7 +11,7 @@
 						<div class="item-blog p-b-80">
 							@foreach($blogs as $blog)
 							<a href="{{ route('front_detailblog', ['id'=>$blog->id]) }}" class="item-blog-img pos-relative dis-block hov-img-zoom">
-								<img src="{{ url('image/Blogs/'.$blog->photo.'') }}" alt="IMG-BLOG">
+								<img src="{{ url('image/Blog/'.$blog->photo.'') }}" alt="IMG-BLOG">
 
 								<span class="item-blog-date dis-block flex-c-m pos1 size17 bg4 s-text1">
 									{{ ($blog) ? $blog->created_at : '' }}
@@ -30,15 +30,7 @@
 										By Admin
 										<span class="m-l-3 m-r-6">|</span>
 									</span>
-
-									<span>
-										Cooking, Food
-										<span class="m-l-3 m-r-6">|</span>
-									</span>
-
-									<span>
-										8 Comments
-									</span>
+									
 								</div>
 
 								<p class="p-b-12">
@@ -80,85 +72,23 @@
 						</h4>
 
 						<ul class="bgwhite">
+							@foreach($products as $product)
 							<li class="flex-w p-b-20">
 								<a href="product-detail.html" class="dis-block wrap-pic-w w-size22 m-r-20 trans-0-4 hov4">
-									<img src="images/item-16.jpg" alt="IMG-PRODUCT">
+									<img src="{{ url('image/Products/'.$product->photo.'') }}" alt="{{$product->name}}">
 								</a>
 
 								<div class="w-size23 p-t-5">
 									<a href="product-detail.html" class="s-text20">
-										White Shirt With Pleat Detail Back
+										{{($product) ? $product->title : ''}}
 									</a>
 
 									<span class="dis-block s-text17 p-t-6">
-										$19.00
+										{{($product) ? $product->prix : ''}}
 									</span>
 								</div>
 							</li>
-
-							<li class="flex-w p-b-20">
-								<a href="product-detail.html" class="dis-block wrap-pic-w w-size22 m-r-20 trans-0-4 hov4">
-									<img src="images/item-17.jpg" alt="IMG-PRODUCT">
-								</a>
-
-								<div class="w-size23 p-t-5">
-									<a href="product-detail.html" class="s-text20">
-										Converse All Star Hi Black Canvas
-									</a>
-
-									<span class="dis-block s-text17 p-t-6">
-										$39.00
-									</span>
-								</div>
-							</li>
-
-							<li class="flex-w p-b-20">
-								<a href="product-detail.html" class="dis-block wrap-pic-w w-size22 m-r-20 trans-0-4 hov4">
-									<img src="images/item-08.jpg" alt="IMG-PRODUCT">
-								</a>
-
-								<div class="w-size23 p-t-5">
-									<a href="product-detail.html" class="s-text20">
-										Nixon Porter Leather Watch In Tan
-									</a>
-
-									<span class="dis-block s-text17 p-t-6">
-										$17.00
-									</span>
-								</div>
-							</li>
-
-							<li class="flex-w p-b-20">
-								<a href="product-detail.html" class="dis-block wrap-pic-w w-size22 m-r-20 trans-0-4 hov4">
-									<img src="images/item-03.jpg" alt="IMG-PRODUCT">
-								</a>
-
-								<div class="w-size23 p-t-5">
-									<a href="product-detail.html" class="s-text20">
-										Denim jacket blue
-									</a>
-
-									<span class="dis-block s-text17 p-t-6">
-										$39.00
-									</span>
-								</div>
-							</li>
-
-							<li class="flex-w p-b-20">
-								<a href="product-detail.html" class="dis-block wrap-pic-w w-size22 m-r-20 trans-0-4 hov4">
-									<img src="images/item-05.jpg" alt="IMG-PRODUCT">
-								</a>
-
-								<div class="w-size23 p-t-5">
-									<a href="product-detail.html" class="s-text20">
-										Nixon Porter Leather Watch In Tan
-									</a>
-
-									<span class="dis-block s-text17 p-t-6">
-										$17.00
-									</span>
-								</div>
-							</li>
+							@endforeach							
 						</ul>												
 					</div>
 				</div>

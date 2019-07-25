@@ -76,7 +76,7 @@
                 <div class="col-sm-10 col-md-8 col-lg-4 m-l-r-auto">
                     <!-- block1 -->
                     <div class="block1 hov-img-zoom pos-relative m-b-30">
-                        <img src="images/freshly-made-salad-tom-gowanlock.jpg" alt="IMG-BENNER">
+                        <img src="images/appetizer-bowl-ceramic-764925 - Copie.jpg" alt="IMG-BENNER">
 
                         <div class="block1-wrapbtn w-size2">
                             <!-- Button -->
@@ -127,7 +127,7 @@
                 <div class="col-sm-10 col-md-8 col-lg-4 m-l-r-auto">
                     <!-- block1 -->
                     <div class="block1 hov-img-zoom pos-relative m-b-30">
-                        <img src="images/banner-04.jpg" alt="IMG-BENNER">
+                        <img src="images/cheeseburger-martin-bondscience-photo-library.jpg" alt="IMG-BENNER">
 
                         <div class="block1-wrapbtn w-size2">
                             <!-- Button -->
@@ -203,9 +203,7 @@
                             </div>
                         </div>
                     </div>
-                    @endforeach
-
-                    
+                    @endforeach                    
                 </div>
             </div>
 
@@ -227,7 +225,7 @@
                     <!-- Block3 -->
                     <div class="block3">
                         <a href="{{ route('front_blog') }}" class="block3-img dis-block hov-img-zoom">
-                            <img src="{{ url('image/Blog/'.$blog->photo.'') }}" alt="{{$blog->title}}">
+                            <img src="{{ url('image/Blogs/'.$blog->photo.'') }}" alt="{{$blog->title}}">
                         </a>
 
                         <div class="block3-txt p-t-14">

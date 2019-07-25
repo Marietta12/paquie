@@ -22,7 +22,8 @@
                             <thead>
                             <tr>
                                 <th>Titre</th>
-                                <th>Description</th>                           
+                                <th>Description</th>
+                                <th>Photo</th>                           
                                 <th class="no-sort">Action</th>
                             </tr>
                             </thead>
@@ -49,24 +50,7 @@
                 $form.trigger('submit'); // submit the form
         });
     });
-
-     /* $('.category-list').on('click','.form-check-input',function(){
-        var category_id = $(this).closest('.switch').data('id');
-        
-        $.ajax({
-            type: "POST",
-            data: {'category_id':category_id},
-            url: base_url + 'admin/category_status',
-            error: function (error) {
-                console.log(error);
-            }
-        });
-          // if($(this).find('.form-check-input').prop('checked')){
-          //   var user_id = $(this).data('id');
-          // }else{
-          //   console.log('false');
-          // }
-      });*/
+     
       
   </script>  
 @stop

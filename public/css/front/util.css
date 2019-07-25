@@ -3906,7 +3906,8 @@ EFFECT   EFFECT   EFFECT   EFFECT   EFFECT   EFFECT  EFFECT
 .pos1 {
 	position: absolute;
 	left: 0;
-	bottom: 40px;
+	bottom: 30px;
+	height: 50px;
 }
 
 .pos2 {
