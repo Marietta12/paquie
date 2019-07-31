@@ -174,7 +174,7 @@
                     <div class="item-slick2 p-l-15 p-r-15">
                         <!-- Block2 -->
                         <div class="block2">
-                            <div class="block2-img wrap-pic-w of-hidden pos-relative">
+                            <div class="block2-img container_product wrap-pic-w of-hidden pos-relative">
                                 <img src="{{ url('image/Products/'.$product->photo.'') }}" alt="{{$product->name}}">
 
                                 <div class="block2-overlay trans-0-4">
@@ -224,7 +224,7 @@
                 <div class="col-sm-10 col-md-4 p-b-30 m-l-r-auto">
                     <!-- Block3 -->
                     <div class="block3">
-                        <a href="{{ route('front_blog') }}" class="block3-img dis-block hov-img-zoom">
+                        <a href="{{ route('front_blog') }}" class="block3-img container_blog dis-block hov-img-zoom">
                             <img src="{{ url('image/Blogs/'.$blog->photo.'') }}" alt="{{$blog->title}}">
                         </a>
 

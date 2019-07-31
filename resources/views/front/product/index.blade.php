@@ -57,28 +57,25 @@
 					</div>
 				</div>
 
-				<div class="col-sm-6 col-md-8 col-lg-9 p-b-50">
+				<div class="col-sm-6 col-md-8 col-lg-9 p-b-50 all-product">
 					<!--  -->
 					<div class="flex-sb-m flex-w p-b-35">
 						<div class="flex-w">
 							<div class="rs2-select2 bo4 of-hidden w-size12 m-t-5 m-b-5 m-r-10">
-								<select class="selection-2" name="sorting">
-									<option>Triage par défaut</option>
-									<option>Popularité</option>
-									<option>Prix: bas de haut</option>
-									<option>Prix: haut de bas</option>
+								<select class="selection-2 selection_lara" name="sorting">
+									<option value="default">Triage par défaut</option>
+									<option value="price-down-up">Prix: bas de haut</option>
+									<option value="price-up-down">Prix: haut de bas</option>
 								</select>
 							</div>
 
 							<div class="rs2-select2 bo4 of-hidden w-size12 m-t-5 m-b-5 m-r-10">
-								<select class="selection-2" name="sorting">
-									<option>Prix</option>
-									<option>$0.00 - $50.00</option>
-									<option>$50.00 - $100.00</option>
-									<option>$100.00 - $150.00</option>
-									<option>$150.00 - $200.00</option>
-									<option>$200.00+</option>
-
+								<select class="selection-2 selection_lara" name="price">
+									<option value="default">Triage par défault</option>
+									<option value="0-5000">0Ar - 5.000Ar</option>
+									<option value="5000-10000">5.000Ar - 10.000Ar</option>
+									<option value="10000-20000">1.000Ar - 20.000Ar</option>
+									<option value="20000+">20.000Ar +</option>
 								</select>
 							</div>
 						</div>
@@ -94,7 +91,7 @@
 						<div class="col-sm-12 col-md-6 col-lg-4 p-b-50">
 							<!-- Block2 -->
 							<div class="block2">
-								<div class="block2-img wrap-pic-w of-hidden pos-relative">
+								<div class="block2-img container_product wrap-pic-w of-hidden pos-relative">
 									
 									<img src="{{ url('image/Products/'.$product->photo.'') }}">
 									
