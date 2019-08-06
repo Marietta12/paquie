@@ -1,5 +1,31 @@
 jQuery(document).ready(function () {
 
+     $("#form-blog").validate({
+      rules : {
+        inputTitle : {
+          required : true
+        },
+        inputIdUser : {
+          required : true,         
+        },  
+        inputDescription : {
+          required : true
+        },
+        inputPhoto : {
+          required : true
+        }
+      },
+      messages : {
+        inputTitle : "Veuillez ajouter un titre",
+        inputIdUser : "Veuillez ajouter votre identifiant",
+        inputDescription : "Veuillez ajouter une description",
+        inputPhoto : "Veuillez ajouter une photo"        
+      },
+      submitHandler: function(form) {
+        form.submit();
+      }
+     });
+
     
     $('.select-brand, .select-product-status, .select-product-manager').popover({
         trigger: "hover"    

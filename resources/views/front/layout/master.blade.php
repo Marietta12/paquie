@@ -107,6 +107,7 @@
 
 <!--===============================================================================================-->
 	<script src="{{ asset('js/front/main.js') }}"></script>
+	<script src="{{ asset('js/front/cart.js') }}"></script>
 	@yield('additional-js')
 
 </body>

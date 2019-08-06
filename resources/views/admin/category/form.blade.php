@@ -21,7 +21,7 @@
             <div class="tab-content">            
 
               <div class="tab-pane active" id="settings">
-                  {!! Form::open(array('url' => ($category) ? route('category.update', ['category' => $category->id]) : route('category.store'),'files' => true,'class'=>'form-horizontal','id'=>'form-profil','method'=>($category) ? 'PATCH' : 'POST')) !!}
+                  {!! Form::open(array('url' => ($category) ? route('category.update', ['category' => $category->id]) : route('category.store'),'files' => true,'class'=>'form-horizontal','id'=>'form-category','method'=>($category) ? 'PATCH' : 'POST')) !!}
 
                   <div class="form-group">
                     <label for="inputTitle" class="col-sm-2 control-label">Titre</label>
@@ -64,5 +64,5 @@
 @stop
 
 @section('js')
-  <!-- {!! Html::script('js/admin/user.js') !!} -->
+  {!! Html::script('js/admin/listCategory.js') !!}
 @stop

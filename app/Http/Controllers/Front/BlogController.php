@@ -32,6 +32,7 @@ class BlogController extends Controller
     {
  
     	$blog = $this->blog_repository->findBlog($id);
-    	return view('front.blog.detailBlog', compact('blog'));
+        $products = $this->product_repository->getBlog();
+    	return view('front.blog.detailBlog', compact('blog', 'products'));
     }
 }

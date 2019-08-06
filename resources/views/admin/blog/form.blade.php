@@ -21,7 +21,7 @@
             <div class="tab-content">            
 
               <div class="tab-pane active" id="settings">
-                  {!! Form::open(array('url' => ($blog) ? route('blog.update', ['blog' => $blog->id]) : route('blog.store'),'files' => true,'class'=>'form-horizontal','id'=>'form-profil','method'=>($blog) ? 'PATCH' : 'POST')) !!}
+                  {!! Form::open(array('url' => ($blog) ? route('blog.update', ['blog' => $blog->id]) : route('blog.store'),'files' => true,'class'=>'form-horizontal','id'=>'form-blog','method'=>($blog) ? 'PATCH' : 'POST')) !!}
 
                   <div class="form-group">
                     <label for="inputTitle" class="col-sm-2 control-label">Titre</label>
@@ -71,5 +71,5 @@
 @stop
 
 @section('js')
-  <!-- {!! Html::script('js/admin/user.js') !!} -->
+  {!! Html::script('js/admin/listBlog.js') !!}
 @stop
