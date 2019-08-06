@@ -22,7 +22,7 @@
             <div class="tab-content">            
 
               <div class="tab-pane active" id="settings">
-                  {!! Form::open(array('url' => ($product) ? route('product.update', ['product' => $product->id]) : route('product.store'),'files' => true,'class'=>'form-horizontal','id'=>'form-profil','method'=>($product) ? 'PATCH' : 'POST')) !!}
+                  {!! Form::open(array('url' => ($product) ? route('product.update', ['product' => $product->id]) : route('product.store'),'files' => true,'class'=>'form-horizontal','id'=>'form-product','method'=>($product) ? 'PATCH' : 'POST')) !!}
 
                   <div class="form-group">
                     <label for="inputTitle" class="col-sm-2 control-label">Titre</label>
@@ -85,5 +85,6 @@
 @stop
 
 @section('js')
-  <!-- {!! Html::script('js/admin/user.js') !!} -->
+  {!! Html::script('js/admin/listProduct.js') !!}
+  <!-- {!! Html::script('js/admin/listCategory.js') !!} -->
 @stop

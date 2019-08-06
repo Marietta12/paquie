@@ -2,6 +2,7 @@
 use App\Category;
 use App\Product;
 use App\Blog;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,6 +19,7 @@ Route::get('/', function () {
     $categories = Category::orderBy('id','desc')->get();
     $products = Product::orderBy('id','desc')->limit(10)->get();    
     $blogs = Blog::with('user')->orderBy('id','desc')->limit(3)->get();
+    Cart::clear();
     return view('front.home.index', compact('categories','products','blogs'));
 })->name('home');
 
@@ -71,6 +73,9 @@ Route::namespace('Front')->group(function () {
     Route::get('/detail_blog/{id}', 'BlogController@detailBlog')->name('front_detailblog');
     Route::get('/contact', 'ContactController@index')->name('front_contact');
     Route::get('/about', 'AboutController@index')->name('front_about');
+    Route::get('/cart', 'CartController@index')->name('front_cart');
+    Route::get('/cart/add/{id}', 'CartController@add')->name('add_to_cart');
+    // Route::get('/cart/getContent', 'CartController@getContent')->name('getcontentcart');
     
 
 });

@@ -15,7 +15,7 @@
 
 							<div class="blog-detail-txt p-t-33">
 								<h4 class="p-b-11 m-text24">
-									Black Friday Guide: Best Sales & Discount Codes
+									{{ ($blog) ? $blog->title : '' }}
 								</h4>
 
 								<div class="s-text8 flex-w flex-m p-b-21">
@@ -29,18 +29,14 @@
 										<span class="m-l-3 m-r-6">|</span>
 									</span>
 
-									<span>
-										Cooking, Food
+									<!-- <span>
+										
 										<span class="m-l-3 m-r-6">|</span>
-									</span>
-
-									<span>
-										8 Comments
-									</span>
+									</span>	 -->								
 								</div>
 
 								<p class="p-b-25">
-									Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sed turpis sed lorem dignissim vulputate nec cursus ante. Nunc sit amet tempor magna. Donec eros sem, porta eget leo et, varius eleifend mauris. Donec eu leo congue, faucibus quam eu, viverra mauris. Nulla consectetur lorem mi, at scelerisque metus hendrerit vitae. Proin vel magna vel neque porta ultricies non eget mauris. Suspendisse potenti.
+									{{ ($blog) ? $blog->description : '' }}
 								</p>
 
 								<p class="p-b-25">
@@ -60,97 +56,38 @@
 							<button class="flex-c-m size5 ab-r-m color1 color0-hov trans-0-4">
 								<i class="fs-13 fa fa-search" aria-hidden="true"></i>
 							</button>
-						</div>						
-
+						</div>
 						<!-- Featured Products -->
 						<h4 class="m-text23 p-t-65 p-b-34">
-							Featured Products
+							Nouveau Produit
 						</h4>
 
 						<ul class="bgwhite">
+							@foreach($products as $product)
 							<li class="flex-w p-b-20">
 								<a href="product-detail.html" class="dis-block wrap-pic-w w-size22 m-r-20 trans-0-4 hov4">
-									<img src="images/item-16.jpg" alt="IMG-PRODUCT">
+									<img src="{{ url('image/Products/'.$product->photo.'') }}" alt="{{$product->name}}">
 								</a>
 
 								<div class="w-size23 p-t-5">
 									<a href="product-detail.html" class="s-text20">
-										White Shirt With Pleat Detail Back
+										{{($product) ? $product->title : ''}}
 									</a>
 
 									<span class="dis-block s-text17 p-t-6">
-										$19.00
+										{{($product) ? $product->prix : ''}}
 									</span>
 								</div>
 							</li>
-
-							<li class="flex-w p-b-20">
-								<a href="product-detail.html" class="dis-block wrap-pic-w w-size22 m-r-20 trans-0-4 hov4">
-									<img src="images/item-17.jpg" alt="IMG-PRODUCT">
-								</a>
-
-								<div class="w-size23 p-t-5">
-									<a href="product-detail.html" class="s-text20">
-										Converse All Star Hi Black Canvas
-									</a>
-
-									<span class="dis-block s-text17 p-t-6">
-										$39.00
-									</span>
-								</div>
-							</li>
-
-							<li class="flex-w p-b-20">
-								<a href="product-detail.html" class="dis-block wrap-pic-w w-size22 m-r-20 trans-0-4 hov4">
-									<img src="images/item-08.jpg" alt="IMG-PRODUCT">
-								</a>
-
-								<div class="w-size23 p-t-5">
-									<a href="product-detail.html" class="s-text20">
-										Nixon Porter Leather Watch In Tan
-									</a>
-
-									<span class="dis-block s-text17 p-t-6">
-										$17.00
-									</span>
-								</div>
-							</li>
-
-							<li class="flex-w p-b-20">
-								<a href="product-detail.html" class="dis-block wrap-pic-w w-size22 m-r-20 trans-0-4 hov4">
-									<img src="images/item-03.jpg" alt="IMG-PRODUCT">
-								</a>
-
-								<div class="w-size23 p-t-5">
-									<a href="product-detail.html" class="s-text20">
-										Denim jacket blue
-									</a>
-
-									<span class="dis-block s-text17 p-t-6">
-										$39.00
-									</span>
-								</div>
-							</li>
-
-							<li class="flex-w p-b-20">
-								<a href="product-detail.html" class="dis-block wrap-pic-w w-size22 m-r-20 trans-0-4 hov4">
-									<img src="images/item-05.jpg" alt="IMG-PRODUCT">
-								</a>
-
-								<div class="w-size23 p-t-5">
-									<a href="product-detail.html" class="s-text20">
-										Nixon Porter Leather Watch In Tan
-									</a>
-
-									<span class="dis-block s-text17 p-t-6">
-										$17.00
-									</span>
-								</div>
-							</li>
-						</ul>						
+							@endforeach							
+						</ul>
 					</div>
 				</div>
 			</div>
 		</div>
 	</section>
+@endsection
+
+@section('additional-js')
+
 @endsection

@@ -1,5 +1,34 @@
-
 jQuery(document).ready(function () {
+
+     $("#form-product").validate({
+      rules : {
+        inputTitle : {
+          required : true,
+        },
+        inputDescription : {
+          required : true,          
+        },  
+        inputPrice : {
+          required : true,
+        },
+        inputCategory : {
+          required : true,
+        },
+        inputPhoto : {
+          required : true,
+        },
+      },
+      messages : {
+        inputTitle : "Veuillez ajouter un titre",
+        inputDescription : "Veuillez ajouter une description",
+        inputPrice : "Veuillez ajouter un prix",
+        inputCategory : "Veuillez ajouter un catégorie",
+        inputPhoto : "Veuillez ajouter une photo",       
+      },
+      submitHandler: function(form) {
+        form.submit();
+      }
+     });
 
     
     $('.select-brand, .select-product-status, .select-product-manager').popover({

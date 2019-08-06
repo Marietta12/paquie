@@ -185,7 +185,7 @@
 
                                     <div class="block2-btn-addcart w-size1 trans-0-4">
                                         <!-- Button -->
-                                        <button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4">
+                                        <button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4 addtocart" data-productid="{{ ($product) ? $product->id : '' }}" data-url="{{route('add_to_cart', ['id'=>$product->id]) }}">
                                             Ajouter au panier
                                         </button>
                                     </div>
@@ -225,7 +225,7 @@
                     <!-- Block3 -->
                     <div class="block3">
                         <a href="{{ route('front_blog') }}" class="block3-img container_blog dis-block hov-img-zoom">
-                            <img src="{{ url('image/Blogs/'.$blog->photo.'') }}" alt="{{$blog->title}}">
+                            <img src="{{ url('image/Blog/'.$blog->photo.'') }}" alt="{{$blog->title}}">
                         </a>
 
                         <div class="block3-txt p-t-14">

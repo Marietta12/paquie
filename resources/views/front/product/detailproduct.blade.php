@@ -76,3 +76,7 @@
 	</div>
 
  @endsection
+
+@section('additional-js')
+
+@endsection

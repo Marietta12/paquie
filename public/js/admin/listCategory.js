@@ -1,5 +1,26 @@
-
 jQuery(document).ready(function () {
+
+    $("#form-category").validate({
+      rules : {
+        inputTitle : {
+          required : true
+        },
+        inputDescription : {
+          required : true,          
+        },  
+        inputPhoto : {
+          required : true
+        },       
+      },
+      messages : {
+        inputTitle : "Veuillez fournir un nom",
+        inputDescription : "Veuillez ajouter une description",
+        inputPhoto : "Veuillez ajouter une photo",             
+      },
+      submitHandler: function(form) {
+        form.submit();
+      }
+     });
 
     
     $('.select-brand, .select-product-status, .select-product-manager').popover({
