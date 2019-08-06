@@ -70,8 +70,9 @@
 
 					<!-- Header cart noti -->
 					<div class="header-cart header-dropdown">
-						<ul class="header-cart-wrapitem">
-							<li class="header-cart-item">
+						<ul class="header-cart-wrapitem command_list">
+							
+							{{-- <li class="header-cart-item">
 								<div class="header-cart-item-img">
 									<img src="#" alt="IMG">
 								</div>
@@ -85,7 +86,10 @@
 									<!-- price -->
 									</span>
 								</div>
-							</li>								
+
+							</li> --}}
+								
+
 						</ul>
 
 						<div class="header-cart-total">

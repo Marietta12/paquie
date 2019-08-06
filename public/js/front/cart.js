@@ -4,15 +4,30 @@ $(document).ready(function(){
 		var productId = $(this).data('productid');
 		if(productIds.indexOf(productId) < 0)
 			productIds.push(productId);
+
+		console.log('Product ids commanded : ', productIds);
 		$.ajax({
 			url: $(this).data('url'),
-			data: {product_id: productId},
-			success: function(responses){
-				console.log('Ajax responses : ', responses);
-				$('.listecart').text(responses['command_number']);
-				console.log(responses['commands']);
-				/*productIds.forEach(function(id){
-					console.log(responses['commands'].28);
+			data: {product_id: productId, product_ids: productIds},
+			success: function(commands){
+				console.log('All commands : ', commands);
+				$('.command_number').text(commands.length);
+				/*commands.forEach(function(command){
+					var commandHTML = '<li class="header-cart-item">\
+											<div class="header-cart-item-img">\
+												<img src="#" alt="IMG">\
+											</div>\
+											<div class="header-cart-item-txt">\
+												<a href="#" class="header-cart-item-name">\
+													'+command.name+'\
+												</a>\
+												<span class="header-cart-item-info">\
+													'+command.price+'\
+												</span>\
+											</div>\
+										</li>'
+					$('.command_list').append(commandHTML);
+
 				});*/
 			},
 			error: function(responses, status, error){
@@ -21,9 +36,12 @@ $(document).ready(function(){
 			}
 		})
 	});
+<<<<<<< HEAD
 
 
 
 
 
+=======
+>>>>>>> 1db5ebf9d2ce3c4305b353032d83182c1992bd7a
 });

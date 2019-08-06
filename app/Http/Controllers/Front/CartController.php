@@ -16,17 +16,26 @@ class CartController extends Controller
 
     public function add(Request $request)
     {
-    	$command_id = Cart::getContent()->count();
+
+    	$command_content = Cart::getContent();
     	$product = Product::find($request->get('product_id'));
     	$add = Cart::add([
     		'id' => $product->id,
     		'name' => $product->title,
     		'price' => $product->prix,
-    		'quantity' => 1
+
+    		'quantity' => 1,
+            'photo' => $product->photo
     	]);
-    	$commands = Cart::getContent();
-    	$command_number = Cart::getContent()->count();
-    	// $view = view('front.cart.modalcart')->render();
-    	return ['commands' => $commands, 'command_number' => $command_number];
+        $product_ids = $request->get('product_ids');
+        $commands = [];
+        foreach ($product_ids as $key => $product_id) {
+            $command = Cart::get($product_id);
+            array_push($commands, $command);
+        }
+    	/*$view = view('front.cart.modalcart')->render();*/
+
+    	return [$commands, $command_content];
+
     }
 }
