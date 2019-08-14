@@ -93,7 +93,7 @@
 						</ul>
 
 						<div class="header-cart-total">
-							Total: $75.00
+							
 						</div>
 
 						<div class="header-cart-buttons">

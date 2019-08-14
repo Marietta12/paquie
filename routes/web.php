@@ -64,6 +64,11 @@ Route::middleware(['auth'])->namespace('Admin')->prefix('admin')->group(function
     Route::get('/get_blog', 'BlogController@getAll')->name('get_blog');
     /*end order_product*/
 
+    /*start faqs*/
+    Route::resource('faqs', 'FAQsController');
+    Route::get('/get_faqs', 'FAQsController@getAll')->name('get_faqs');
+    /*end faqs*/
+
 });
 
 Route::namespace('Front')->group(function () {
@@ -71,11 +76,12 @@ Route::namespace('Front')->group(function () {
     Route::get('/detail_product/{id}', 'ProductController@detailproduct')->name('front_detailproduct');
     Route::get('/blog', 'BlogController@index')->name('front_blog');
     Route::get('/detail_blog/{id}', 'BlogController@detailBlog')->name('front_detailblog');
+    Route::get('/faqs', 'FAQsController@index')->name('front_faqs');
     Route::get('/contact', 'ContactController@index')->name('front_contact');
     Route::get('/about', 'AboutController@index')->name('front_about');
     Route::get('/cart', 'CartController@index')->name('front_cart');
     Route::get('/cart/add/{id}', 'CartController@add')->name('add_to_cart');
-    // Route::get('/cart/getContent', 'CartController@getContent')->name('getcontentcart');
+    
     
 
 });

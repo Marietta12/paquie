@@ -17,7 +17,26 @@ class CartController extends Controller
     public function add(Request $request)
     {
 
-    	$command_content = Cart::getContent();
+        Cart::clear();
+        $product_ids = $request->get('product_ids');
+        $product_pics = $request->get('product_pics');
+        $commands = [];
+        foreach ($product_ids as $key => $product_id) {
+            $indx = array_search($product_id, $product_ids);
+
+            $product = Product::find($product_id);
+            $add = Cart::add([
+                'id' => $product->id,
+                'name' => $product->title,
+                'price' => $product->prix,
+                'quantity' => 1,
+                'attributes' => [$product->photo]
+            ]);
+
+            $command = Cart::get($product_id);
+            array_push($commands, $command);
+        }
+    	/*$command_content = Cart::getContent();
     	$product = Product::find($request->get('product_id'));
     	$add = Cart::add([
     		'id' => $product->id,
@@ -32,10 +51,10 @@ class CartController extends Controller
         foreach ($product_ids as $key => $product_id) {
             $command = Cart::get($product_id);
             array_push($commands, $command);
-        }
-    	/*$view = view('front.cart.modalcart')->render();*/
+        }*/
+    	
 
-    	return [$commands, $command_content];
-
+    	return [$commands,  Cart::getContent()];
+        /*$view = view('front.cart.modalcart')->render();*/
     }
 }

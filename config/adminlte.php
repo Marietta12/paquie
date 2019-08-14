@@ -155,6 +155,11 @@ return [
             'icon'        => 'building-o',
         ],
         [
+            'text'        => 'FAQs',
+            'url'         => 'admin/faqs',
+            'icon'        => 'credit-card',
+        ],
+        [
             'text'        => 'Gestion utilisateurs',
             'url'         => 'admin/user',
             'icon'        => 'user',

@@ -108,7 +108,8 @@
 											</button>
 										</div>
 									</div>
-								</div>{{ ($product) ? $product->title : '' }}
+								</div>
+								{{ ($product) ? $product->title : '' }}
 
 								<div class="block2-txt p-t-20">
 									<a href="{{ route('front_detailproduct', ['id'=>$product->id]) }}" class="block2-name dis-block s-text3 p-b-5">

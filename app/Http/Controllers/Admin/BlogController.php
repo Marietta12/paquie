@@ -63,11 +63,10 @@ class BlogController extends Controller
                 $input = $this->uploadImage($request);
                 $blogs = $this->blog_repository->createBlog($input);
             }catch(\Exception $e){
-                dd('error');
+                // dd('error');
                 return Redirect::back()->withInput()->withErrors($e->getMessage());
             }
-            toastr()->success('Ajout blog réussie!');
-            /*return redirect()->route('category.form');*/
+            toastr()->success('Ajout blog réussie!');            
             $blog = false;
             return view("admin/blog/list");
         }

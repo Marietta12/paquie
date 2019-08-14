@@ -97,7 +97,7 @@
 			<ul>
 
 				<li class="p-b-9">
-					<a href="#" class="s-text7">
+					<a href="{{ route('front_faqs') }}" class="s-text7">
 						FAQs
 					</a>
 				</li>
