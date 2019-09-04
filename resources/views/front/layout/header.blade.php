@@ -44,7 +44,7 @@
 						</li>
 
 						<li>
-							<a href="{{ route('front_product') }}">Produit</a>
+							<a href="{{ route('front_product') }}">Produits</a>
 						</li>
 
 						<li>
@@ -72,7 +72,7 @@
 					<div class="header-cart header-dropdown">
 						<ul class="header-cart-wrapitem command_list">
 							
-							{{-- <li class="header-cart-item">
+							<li class="header-cart-item">
 								<div class="header-cart-item-img">
 									<img src="#" alt="IMG">
 								</div>
@@ -87,7 +87,7 @@
 									</span>
 								</div>
 
-							</li> --}}
+							</li> 
 								
 
 						</ul>
@@ -133,11 +133,11 @@
 
 					<div class="header-wrapicon2">
 						<img src="images/icons/icon-header-02.png" class="header-icon1 js-show-header-dropdown" alt="ICON">
-						<span class="header-icons-noti">0</span>
+						<span class="header-icons-noti command_number">0</span>
 
 						<!-- Header cart noti -->
 						<div class="header-cart header-dropdown">
-							<ul class="header-cart-wrapitem">
+							<ul class="header-cart-wrapitem command_list">
 								<li class="header-cart-item">
 									<div class="header-cart-item-img">
 										<img src="#" alt="IMG">
@@ -156,7 +156,7 @@
 							</ul>
 
 							<div class="header-cart-total">
-								Total: $75.00
+								
 							</div>
 
 							<div class="header-cart-buttons">
@@ -226,7 +226,7 @@
 					</li>
 
 					<li class="item-menu-mobile">
-						<a href="{{ route('front_product') }}">Produit</a>
+						<a href="{{ route('front_product') }}">Produits</a>
 					</li>
 
 					<li class="item-menu-mobile">

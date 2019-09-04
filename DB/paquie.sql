@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.4
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  mar. 06 août 2019 à 08:30
--- Version du serveur :  5.7.24
--- Version de PHP :  7.2.14
+-- Généré le :  jeu. 29 août 2019 à 11:51
+-- Version du serveur :  5.7.26
+-- Version de PHP :  7.2.18
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -106,6 +106,22 @@ INSERT INTO `command` (`id`, `num_command`, `nbre_product`, `total_price`, `crea
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `faqs`
+--
+
+DROP TABLE IF EXISTS `faqs`;
+CREATE TABLE IF NOT EXISTS `faqs` (
+  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `questions` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `answers` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `migrations`
 --
 
@@ -115,7 +131,7 @@ CREATE TABLE IF NOT EXISTS `migrations` (
   `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `batch` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Déchargement des données de la table `migrations`
@@ -128,7 +144,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (5, '2019_07_10_140225_create_product', 3),
 (6, '2019_07_12_120132_create_commande', 4),
 (7, '2019_07_12_145629_create_order_product', 5),
-(8, '2019_07_21_215145_create_blog', 6);
+(8, '2019_07_21_215145_create_blog', 6),
+(9, '2019_08_09_043014_create_faqs', 7);
 
 -- --------------------------------------------------------
 
@@ -190,7 +207,7 @@ CREATE TABLE IF NOT EXISTS `product` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=29 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=30 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Déchargement des données de la table `product`
@@ -207,7 +224,8 @@ INSERT INTO `product` (`id`, `user_id`, `category_id`, `title`, `description`, `
 (18, 1, 20, 'Gateau', 'Gateau', '6000', 'jSEe7TriBr8IT7MbFFPAhOpl94duwIywrz0l5jFs.jpg', '2019-07-17 11:55:46', '2019-07-17 11:55:46'),
 (19, 1, 21, 'Cookies', 'Cookies', '7000', 'k4fBWi13oGxO6K41RRL7VQ2iIQjimzQ2l9o4y6ex.jpg', '2019-07-17 11:57:05', '2019-07-17 11:57:05'),
 (25, 1, 22, 'Pomme frite', 'pomme frite', '7000', 'ZoL5bjwAmqOi6b1G4tZG2XAqiQPWe9SKkOkqXCRV.jpg', '2019-07-21 06:28:01', '2019-07-24 15:38:11'),
-(28, 1, 21, 'Croissant au chocolat', 'C\'bon', '1000', 'vmhQMEGPG0ZT5TChaib8bvDc7AHoiUcta3LDz3hZ.jpg', '2019-08-03 15:14:28', '2019-08-03 15:14:28');
+(28, 1, 21, 'Croissant au chocolat', 'C\'bon', '1000', 'vmhQMEGPG0ZT5TChaib8bvDc7AHoiUcta3LDz3hZ.jpg', '2019-08-03 15:14:28', '2019-08-03 15:14:28'),
+(29, 1, 18, 'Entrée', 'entre salade', '1000', 'mBBqXJXdbnBx2lMUXoYgXsYCK3QuuHTaQ1gaLVoW.jpg', '2019-08-29 08:47:12', '2019-08-29 08:47:12');
 
 -- --------------------------------------------------------
 

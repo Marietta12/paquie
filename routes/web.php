@@ -80,7 +80,9 @@ Route::namespace('Front')->group(function () {
     Route::get('/contact', 'ContactController@index')->name('front_contact');
     Route::get('/about', 'AboutController@index')->name('front_about');
     Route::get('/cart', 'CartController@index')->name('front_cart');
+    Route::get('/cart/liste', 'CartController@lister')->name('front_cart_list');
     Route::get('/cart/add/{id}', 'CartController@add')->name('add_to_cart');
+    Route::get('/cart/modifcommand', 'CartController@modifcommand')->name('modifcommand');
     
     
 
