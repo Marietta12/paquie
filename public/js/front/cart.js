@@ -82,14 +82,14 @@ $(document).ready(function(){
 								'<td class="column-2"> '+commandy.name+' </td>'+
 								'<td class="column-3"> '+commandy.price+'  Ar</td>'+
 								'<td class="column-4">'+
-									'<div class="flex-w bo5 of-hidden w-size17">'+
-										'<button class="btn-num-product-down color1 flex-c-m size7 bg8 eff2">'+
+									'<div class="flex-w bo5 of-hidden w-size17 ">'+
+										'<button class="btn-num-product-down color1 flex-c-m size7 bg8 eff2 commandmoins">'+
 											'<i class="fs-12 fa fa-minus" aria-hidden="true"></i>'+
 										'</button>'+
 
 										'<input class="size8 m-text18 t-center num-product" type="number" name="num-product1" value="'+commandy.quantity+'">'+
 
-										'<button class="btn-num-product-up color1 flex-c-m size7 bg8 eff2">'+
+										'<button class="btn-num-product-up color1 flex-c-m size7 bg8 eff2 commandplus">'+
 											'<i class="fs-12 fa fa-plus" aria-hidden="true"></i>'+
 										'</button>'+
 									'</div>'+
@@ -112,7 +112,15 @@ $(document).ready(function(){
 								</li>';
 					$('.command_list').append(commandHTML);
 			
-					totalPrice = +totalPrice+(+commandy.price); //totalPrice = totalPrice +...	
+					totalPrice = +totalPrice+(+commandy.price); //totalPrice = totalPrice +...
+
+					$(".commandmoins").on("click", function(){
+						commandy.quantity = +commandy.quantity - (+1);
+					})
+
+					$(".commandplus").on("click", function(){
+					commandy.quantity = + commandy.quantity + (+1);
+					})	
 				})
 				console.log('Total: ', totalPrice+' Ar');
 				$('.header-cart-total').html(totalPrice+' Ar');
@@ -128,3 +136,10 @@ $(document).ready(function(){
 	edygsfqh();
 
 });
+
+// $(".commandmoins").on("click", function(){
+// 	commandy.quantity = +commandy.quantity - (+1);
+// },
+// $(".commandplus").on("click", function(){
+// 	commandy.quantity = + commandy.quantity + (+1);
+// },
