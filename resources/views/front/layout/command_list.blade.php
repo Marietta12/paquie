@@ -19,6 +19,6 @@
 		@endforeach					
 	</ul>
 @endif
-<div class="header-cart-total">
-	{{ "Total: $" . ($total)? $total : 0 }}
+<div class="header-cart-total" data-total="{{$total}}">
+	{{ "Total: $ " . ($total)? $total : 0 }}
 </div>
