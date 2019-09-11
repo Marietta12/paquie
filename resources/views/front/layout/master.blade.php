@@ -34,7 +34,7 @@
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="{{ asset('vendor/noui/nouislider.min.css') }}">
 <!--===============================================================================================-->
-	<link rel="stylesheet" href="{{ asset('//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css') }}">
+	<link rel="stylesheet" href="{{-- asset('//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css') --}}">
 	<link rel="stylesheet" type="text/css" href="{{ asset('css/front/util.css') }}">
 	<link rel="stylesheet" type="text/css" href="{{ asset('css/front/main.css') }}">
 	@yield('additional-css')
@@ -66,7 +66,7 @@
 
 
 <!--===============================================================================================-->
-	<script type="text/javascript" src="{{ asset('vendor/jquery/jquery-3.2.1.min.js') }}"></script>
+	<script type="text/javascript" src="{{ asset('vendor/jquery/jquery-3.2.1.js') }}"></script>
 <!--===============================================================================================-->
 	<script type="text/javascript" src="{{ asset('vendor/animsition/js/animsition.min.js') }}"></script>
 <!--===============================================================================================-->
@@ -93,14 +93,14 @@
 		$('.block2-btn-addcart').each(function(){
 			var nameProduct = $(this).parent().parent().parent().find('.block2-name').html();
 			$(this).on('click', function(){
-				swal(nameProduct, "est ajouté au pannier !", "success");
+				swal(nameProduct, " est ajouté au pannier !", "success");
 			});
 		});
 
 		$('.block2-btn-addwishlist').each(function(){
 			var nameProduct = $(this).parent().parent().parent().find('.block2-name').html();
 			$(this).on('click', function(){
-				swal(nameProduct, "est ajouté dans le wishlist !", "success");
+				swal(nameProduct, " est ajouté dans le wishlist !", "success");
 			});
 		});
 	</script>
