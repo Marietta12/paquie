@@ -3015,6 +3015,13 @@ TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT
 /*[ S-Text 0 - 15 ]
 ///////////////////////////////////////////////////////////
 */
+.s-texte1 {
+	font-family: Montserrat-Regular;
+	font-size: 10px;
+	color: white;
+	text-transform: uppercase;
+}
+
 .s-text1 {
 	font-family: Montserrat-Regular;
 	font-size: 15px;

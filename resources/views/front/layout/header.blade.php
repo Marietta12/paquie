@@ -48,7 +48,7 @@
 						</li>
 
 						<li>
-							<a href="{{ route('front_blog') }}">Blog</a>
+							<a href="{{ route('front_blog') }}">Blogs</a>
 						</li>
 
 						<li>
@@ -74,7 +74,7 @@
 							
 							<li class="header-cart-item">
 								<div class="header-cart-item-img">
-									<img src="#" alt="IMG">
+									<img src="#" alt=" ">
 								</div>
 
 								<div class="header-cart-item-txt">
@@ -99,15 +99,15 @@
 						<div class="header-cart-buttons">
 							<div class="header-cart-wrapbtn">
 								<!-- Button -->
-								<a href="{{ route('front_cart') }}" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
-									<h6>Voir la commande</h6>
+								<a href="{{ route('front_cart') }}" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-texte1 trans-0-4">
+									Voir la commande
 								</a>
 							</div>
 
 							<div class="header-cart-wrapbtn">
 								<!-- Button -->
-								<a href="#" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
-									<h6>Annuler</h6>
+								<a href="#" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-texte1 trans-0-4">
+									Annuler
 								</a>
 							</div>
 						</div>
@@ -162,15 +162,15 @@
 							<div class="header-cart-buttons">
 								<div class="header-cart-wrapbtn">
 									<!-- Button -->
-									<a href="{{ route('front_cart') }}" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
-										<h6>Voir la commande</h6>
+									<a href="{{ route('front_cart') }}" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-texte1 trans-0-4">
+										Voir la commande
 									</a>
 								</div>
 
 								<div class="header-cart-wrapbtn">
 									<!-- Button -->
-									<a href="#" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
-										<h6>Annuler</h6>		
+									<a href="#" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-texte1 trans-0-4">
+										Annuler		
 									</a>
 								</div>
 							</div>
@@ -230,7 +230,7 @@
 					</li>
 
 					<li class="item-menu-mobile">
-						<a href="{{ route('front_blog') }}">Blog</a>
+						<a href="{{ route('front_blog') }}">Blogs</a>
 					</li>
 
 					<li class="item-menu-mobile">

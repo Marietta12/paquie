@@ -4,11 +4,25 @@ namespace App\Http\Controllers\Front;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Repositories\OrderProductRepository;
+use App\Interfaces\OrderProductRepositoryInterface;
 use App\Product;
 use Cart;
 
 class CartController extends Controller
 {
+
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    protected $order_product_repository;
+    public function __construct(OrderProductRepository $order_product_repository){
+        $this->order_product_repository = $order_product_repository;
+
+    }
     public function index()
     {
     	return view('front.cart.index');
@@ -109,4 +123,47 @@ class CartController extends Controller
         return [$commands,  Cart::getContent()];
         /*$view = view('front.cart.modalcart')->render();*/
     }
+
+    public function editer(Request $request) {
+
+        $crt_id = $request->get('l_id');
+        $crt_qqt = $request->get('nbr');
+
+        $cmd = Cart::get($crt_id);
+        $cmd['quantity'] = $crt_qqt;
+        //Cart::set($cmd);
+
+        return Cart::getContent();
+    }
+
+
+    public function enregistrer(Request $request){
+        $cmd = [
+            'product_id'=> $request->get('product_id'),
+            'quantity'=>  $request->get('quantity'),
+            'price'=> $request->get('price'),
+            'total_price'=>  $request->get('total_price'),
+            'client_name'=> $request->get('client_name'),
+            'client_table'=>  $request->get('client_table')
+        ];
+
+        try{
+            
+            $order_products = $this->order_product_repository->createOrderProduct($cmd);
+
+            return ['msg'=> 'Commande bien reçue !', 'status' => 'ok'];
+            
+        }catch(\Exception $e){
+            //dd($e->getMessage());
+            //return Redirect::back()->withInput()->withErrors($e->getMessage());
+            return ['msg'=> $e->getMessage(), 'status' => 'ko'];            
+        }
+    }
+
+    public function vider_carte(){
+        Cart::clear();
+
+        return Cart::getContent();
+    }
+
 }

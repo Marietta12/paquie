@@ -7,9 +7,9 @@ use App\Http\Controllers\Controller;
 use App\Repositories\OrderProductRepository;
 use App\Interfaces\OrderProductRepositoryInterface;
 use Illuminate\Support\Facades\Redirect;
-use Yajra\DataTables\Facades\DataTables;
-use App\Service\UploadService;
 use Illuminate\Support\Facades\Validator;
+use App\Product;
+use Cart;
 
 class OrderProductController extends Controller
 {
@@ -48,35 +48,36 @@ class OrderProductController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        $rules = array(    
-            'inputNumorder_product' => 'required',        
-            'inputIdProduct' => 'required',
-            'inputQuantity' => 'required',
-            'inputPrice' => 'required',
-            'inputSousTotal' => 'required'
+    // public function store(Request $request)
+    // {
+    //     $rules = array(    
+    //         'inputNumorder_product' => 'required',        
+    //         'inputIdProduct' => 'required',
+    //         'inputQuantity' => 'required',
+    //         'inputPrice' => 'required',
+    //         'inputSousTotal' => 'required'
 
-        );
-        $validator = Validator::make($request->all(), $rules);
-        if ($validator->fails()) {
-            // dd($validator);
-            return Redirect::back()->withInput()->withErrors($validator);
-        }else{
-            try{
+    //     );
+    //     $validator = Validator::make($request->all(), $rules);
+    //     if ($validator->fails()) {
+    //         // dd($validator);
+    //         return Redirect::back()->withInput()->withErrors($validator);
+    //     }else{
+    //         try{
 
-                // $input = $this->uploadImage($request);
-                $order_products = $this->order_product_repository->createOrderProduct($request);
-            }catch(\Exception $e){
-                dd($e->getMessage());
-                return Redirect::back()->withInput()->withErrors($e->getMessage());
-            }
-            toastr()->success('Ajout ordre de produit réussie!');
-            /*return redirect()->route('Command.form');*/
-            $order_product = false;
-            return view("admin/order_product/list");
-        }
-    }
+    //             // $input = $this->uploadImage($request);
+    //             $order_products = $this->order_product_repository->createOrderProduct($request);
+    //         }catch(\Exception $e){
+    //             dd($e->getMessage());
+    //             return Redirect::back()->withInput()->withErrors($e->getMessage());
+    //         }
+    //         toastr()->success('Ajout ordre de produit réussie!');
+    //         /*return redirect()->route('Command.form');*/
+    //         $order_product = false;
+    //         return view("admin/order_product/list");
+    //     }
+    // }
+
 
     /**
      * Display the specified resource.

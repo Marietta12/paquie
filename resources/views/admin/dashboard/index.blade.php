@@ -29,14 +29,14 @@
           <!-- small box -->
           <div class="small-box bg-aqua">
             <div class="inner">
-              <h3>42</h3>
+              <h3>{{count($orders)}}</h3>
 
-              <p>Nouvelle commande</p>
+              <p>Nouvelles commandes</p>
             </div>
             <div class="icon">
               <i class="ion ion-bag"></i>
             </div>
-            <a href="{{ url('admin/product') }}" class="small-box-footer">Plus de détails <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="#" class="small-box-footer">Plus de détails <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->
@@ -51,7 +51,7 @@
             <div class="icon">
               <i class="ion ion-stats-bars"></i>
             </div>
-            <a href="#" class="small-box-footer">Plus de détails <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="{{ url('admin/product') }}" class="small-box-footer">Plus de détails <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->
@@ -78,13 +78,70 @@
                 <table class="table no-margin">
                   <thead>
                   <tr>
-                    <th>Numéro de commande</th>
-                    <th>Nom du produit</th>
+                    <th>Date de la cmd</th>
+                    <th>Nom Client</th>
+                    <th>Table</th>
+                    <th>Nbr Menu</th>
                     <th>Status</th>
                   </tr>
                   </thead>
                   <tbody>
-                  <tr>
+                    @foreach($allorders as $keys=>$anorder)
+                    <tr data-toggle="collapse" data-target="#collapseOne{{ $keys }}" aria-expanded="true" aria-controls="collapseOne" class="clickable">
+                      <td >{{ ($anorder) ? $anorder['order']->created_at : '' }}</td>
+                      <td >{{ ($anorder) ? $anorder['order']->client_name : '' }}</td>                      
+                      <td >{{ ($anorder) ? $anorder['order']->table_client_nbr : '' }} </td>                      
+                      <td >{{ ($anorder) ? sizeof($anorder['products']) : '0' }} </td>                      
+                      <td>
+                        @if($anorder)
+                          @switch($anorder['order']->status)
+                            @case(0)
+                              <span class="label label-warning">Non Traité</span>      
+                            @break
+                            @case(1)
+                              <span class="label label-info">Traité</span>      
+                            @break
+                            @case(2)
+                              <span class="label label-success">Terminé</span>      
+                            @break
+                          @endswitch
+                        @endif
+                        
+                      </td>
+                    </tr>
+                    <tr id="collapseOne{{ $keys }}" class="collapse bg-info" aria-labelledby="headingOne" data-parent="#accordionExample">
+                      <td></td>
+                      <td colspan="4">
+                        @foreach($anorder['products'] as $k=>$product)
+                          <p>
+                            Menu: {{ $product->title }} | Prix Unitaire: {{ $product->prix }} Ar | Quantité: {{ $anorder['quantities'][$k] }}
+                          </p>
+                        @endforeach
+                        <p>
+                          Montant total: {{ ($anorder) ? $anorder['order']->total_price : '' }} Ar
+                        </p>
+
+                        <div class="d-flex">
+                          <div class="form-check form-check-inline label label-warning">
+                            <input class="form-check-input check-status" type="radio" name="status" id="inlineRadio0{{$keys}}" value="option1">
+                            <label class="form-check-label" for="inlineRadio0{{$keys}}">Non Traité</label>
+                          </div>
+                          <div class="form-check form-check-inline label label-info">
+                            <input class="form-check-input check-status" type="radio" name="status" id="inlineRadio1{{$keys}}" value="option2">
+                            <label class="form-check-label" for="inlineRadio1{{$keys}}">Traité</label>
+                          </div>
+                          <div class="form-check form-check-inline label label-success">
+                            <input class="form-check-input check-status" type="radio" name="status" id="inlineRadio2{{$keys}}" value="option3">
+                            <label class="form-check-label" for="inlineRadio2{{$keys}}">Terminé</label>
+                          </div>
+                        </div>
+                          
+                      </td>
+                      
+                    </tr>
+
+                    @endforeach
+                  <!-- <tr>
                     <td><a href="pages/examples/invoice.html">OR9842</a></td>
                     <td>Call of Duty IV</td>
                     <td><span class="label label-success">Shipped</span></td>
@@ -118,7 +175,7 @@
                     <td><a href="pages/examples/invoice.html">OR9842</a></td>
                     <td>Call of Duty IV</td>
                     <td><span class="label label-success">Shipped</span></td>
-                  </tr>
+                  </tr> -->
                   </tbody>
                 </table>
               </div>

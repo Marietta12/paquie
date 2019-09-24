@@ -82,3 +82,15 @@ input:checked + .slider::before {
   width: 50%;
 }
 /*btn onn/off end*/
+
+.clickable {
+  cursor: pointer;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.form-check {
+    margin: 0 10px;
+}

@@ -34,7 +34,7 @@
 					</button> -->
 
 					<a href="{{ route('front_product') }}" class="flex-c-m sizefull bg1 bo-rad-23 hov1 s-text1 trans-0-4">
-						<h6>Modifier la commande</h6>
+						<h6>Ajouter commande</h6>
 					</a>
 				</div>
 			</div>
@@ -47,7 +47,7 @@
 				</h5>
 
 				<!--  -->
-				<div class="flex-w flex-sb-m p-b-12">
+				<!-- <div class="flex-w flex-sb-m p-b-12">
 					<span class="s-text18 w-size19 w-full-sm">
 						Sous-total:
 					</span>
@@ -55,7 +55,7 @@
 					<span class="m-text21 w-size20 w-full-sm">
 						$39.00
 					</span>
-				</div>
+				</div> -->
 
 				<!--  -->
 				<div class="flex-w flex-sb bo10 p-t-15 p-b-20">
@@ -65,7 +65,7 @@
 
 					<div class="w-size20 w-full-sm">
 						<div class="bo4  size15 m-b-20">
-							<input class="sizefull s-text7-1 p-l-22 p-r-22" type="text" name="name_client" placeholder="Mettez ici votre nom">
+							<input class="sizefull s-text7-1 p-l-22 p-r-22 client_name" type="text" placeholder="Mettez ici votre nom">
 						</div>						
 					</div>
 				</div>
@@ -77,7 +77,7 @@
 
 					<div class="w-size20 w-full-sm">
 						<div class="bo4  size15 m-b-20">
-							<input class="sizefull s-text7-1 p-l-22 p-r-22" type="number" name="name_client" placeholder="Mettez ici le numero de table">
+							<input class="sizefull s-text7-1 p-l-22 p-r-22 client_table" type="number" placeholder="Mettez ici le numero de table">
 						</div>						
 					</div>
 				</div>
@@ -88,14 +88,14 @@
 						Total:
 					</span>
 
-					<span class="m-text21 w-size20 w-full-sm">
-						$39.00
+					<span class="m-text21 w-size20 w-full-sm total-jiaby">
+						
 					</span>
 				</div>
 
 				<div class="size15 trans-0-4">
 					<!-- Button -->
-					<button type="submit" class="flex-c-m sizefull bg1 bo-rad-23 hov1 s-text1 trans-0-4">
+					<button class="flex-c-m sizefull bg1 bo-rad-23 hov1 s-text1 trans-0-4 alefaa">
 						Commander
 					</button>
 				</div>

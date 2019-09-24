@@ -21,11 +21,14 @@ class OrderProductRepository implements OrderProductRepositoryInterface
 
     public function createOrderProduct($data)
     {        
-        $this->model->order_id = $data['inputNumorder_product'];
-        $this->model->product_id = $data['inputIdProduct'];
-        $this->model->quantity = $data['inputQuantity'];
-        $this->model->price = $data['inputPrice'];
-        $this->model->sous_total = $data['inputSousTotal'];        
+        
+        $this->model->product_id = $data['product_id'];
+        $this->model->quantity = $data['quantity'];
+        $this->model->price = $data['price'];
+        $this->model->total_price = $data['total_price'];
+        $this->model->client_name = $data['client_name'];
+        $this->model->table_client_nbr = $data['client_table'];
+                
         $this->model->save();
 
         return $this->model;

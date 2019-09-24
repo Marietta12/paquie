@@ -83,8 +83,11 @@ Route::namespace('Front')->group(function () {
     Route::get('/cart/liste', 'CartController@lister')->name('front_cart_list');
     Route::get('/cart/add/{id}', 'CartController@add')->name('add_to_cart');
     Route::get('/cart/modifcommand', 'CartController@modifcommand')->name('modifcommand');
-    
-    
+    Route::get('/cart/edit', 'CartController@editer')->name('front_cart_edit');
+    Route::get('/cart/clean', 'CartController@vider_carte')->name('front_cart_clean');
 
+    Route::resource('carta', 'CartController');
+    Route::get('/cart/save', 'CartController@enregistrer')->name('front_cart_save');
+    
 });
 

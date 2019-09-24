@@ -50,4 +50,8 @@ jQuery(document).ready(function () {
     }
 
     
+    console.log('Alefaa');
+    jQuery('.check-status').on('change', function(e){
+        console.log('Ato ee!');
+    })  
 });
