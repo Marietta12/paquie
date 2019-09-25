@@ -166,4 +166,17 @@ class CartController extends Controller
         return Cart::getContent();
     }
 
+
+    public function status(Request $request){
+        $id = $request->get('_id');
+        $val = $request->get('current_val');
+
+        $model = $this->order_product_repository->changeStatusOrderProduct($id, $val);
+
+        return response()->json(['id'=> $id, 'val'=>$val, 'cmd'=>$model]);
+        
+    }
+
+    
+
 }

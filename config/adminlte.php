@@ -131,15 +131,19 @@ return [
             'submenu'     => [
                     [
                          'text' => 'Non traité',
-                         'url'  => '#',
+                         'url'  => 'admin/home?traitement=0',
                     ],
                     [
                          'text'    => 'Traité',
-                         'url'     => '#',
+                         'url'     => 'admin/home?traitement=1',
                     ],
                    [
                          'text'    => 'Terminé',
-                          'url'     => '#',
+                          'url'     => 'admin/home?traitement=2',
+                    ], 
+                    [
+                         'text'    => 'Tout',
+                          'url'     => 'admin/home',
                     ],
                 ]
 

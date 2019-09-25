@@ -32,11 +32,17 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
+    public function index(Request $request)
     {
         $users = $this->user_repository->getAllUser();
         $products = $this->product_repository->getAllProduct();
-        $orders = $this->order_product_repository->getAllOrderProduct();
+        if($request->get('traitement') != null){
+            $status = $request->get('traitement');
+            $orders = $this->order_product_repository->getFilteredOrderProduct($status);
+        }else {
+            $orders = $this->order_product_repository->getAllOrderProduct();
+        }
+        
         $allorders = [];
         foreach ($orders as $key => $order) {
             $ids = explode(";", $order->product_id);

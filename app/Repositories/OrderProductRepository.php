@@ -50,8 +50,19 @@ class OrderProductRepository implements OrderProductRepositoryInterface
         return $this->model->orderBy('id','desc')->get();
     }
 
+    public function getFilteredOrderProduct($st){
+        return $this->model->where('status', $st)->orderBy('id','desc')->get();
+    }
+
     public function deleteOrderProduct($order_product_id){
         return $this->model->where('id', $order_product_id)->delete();
+    }
+
+    public function changeStatusOrderProduct($id, $val){
+        $this->model = $this->model->find($id);
+        $this->model->status = $val;        
+        $this->model->save();
+        return $this->model;
     }
 
     

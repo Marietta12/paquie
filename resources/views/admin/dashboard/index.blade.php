@@ -31,7 +31,7 @@
             <div class="inner">
               <h3>{{count($orders)}}</h3>
 
-              <p>Nouvelles commandes</p>
+              <p>Commandes</p>
             </div>
             <div class="icon">
               <i class="ion ion-bag"></i>
@@ -87,7 +87,7 @@
                   </thead>
                   <tbody>
                     @foreach($allorders as $keys=>$anorder)
-                    <tr data-toggle="collapse" data-target="#collapseOne{{ $keys }}" aria-expanded="true" aria-controls="collapseOne" class="clickable">
+                    <tr data-toggle="collapse" data-target="#collapseOne{{ $keys }}" aria-expanded="true" aria-controls="collapseOne" class="clickable" id="cmd{{ $keys }}">
                       <td >{{ ($anorder) ? $anorder['order']->created_at : '' }}</td>
                       <td >{{ ($anorder) ? $anorder['order']->client_name : '' }}</td>                      
                       <td >{{ ($anorder) ? $anorder['order']->table_client_nbr : '' }} </td>                      
@@ -109,7 +109,7 @@
                         
                       </td>
                     </tr>
-                    <tr id="collapseOne{{ $keys }}" class="collapse bg-info" aria-labelledby="headingOne" data-parent="#accordionExample">
+                    <tr id="collapseOne{{ $keys }}" class="collapse bg-info" aria-labelledby="headingOne" data-parent="#accordionExample" data-nbr="{{ $keys }}">
                       <td></td>
                       <td colspan="4">
                         @foreach($anorder['products'] as $k=>$product)
@@ -122,17 +122,36 @@
                         </p>
 
                         <div class="d-flex">
-                          <div class="form-check form-check-inline label label-warning">
-                            <input class="form-check-input check-status" type="radio" name="status" id="inlineRadio0{{$keys}}" value="option1">
-                            <label class="form-check-label" for="inlineRadio0{{$keys}}">Non Traité</label>
+                          <div class="form-check form-check-inline">
+                            <button class="btn btn-sm btn-warning btn-check">
+                              @if($anorder['order']->status == 0)
+                                <i class="fa fa-check-square valeur" data-valeur="0" data-id="{{ $anorder['order']->id }}"></i>
+                              @else
+                                <i class="fa fa-square valeur" data-valeur="0" data-id="{{ $anorder['order']->id }}"></i>
+                              @endif 
+                              Non Traité
+                            </button>
+                            
                           </div>
-                          <div class="form-check form-check-inline label label-info">
-                            <input class="form-check-input check-status" type="radio" name="status" id="inlineRadio1{{$keys}}" value="option2">
-                            <label class="form-check-label" for="inlineRadio1{{$keys}}">Traité</label>
+                          <div class="form-check form-check-inline">
+                            <button class="btn btn-sm btn-info btn-check">
+                              @if($anorder['order']->status == 1)
+                                <i class="fa fa-check-square valeur" data-valeur="1" data-id="{{ $anorder['order']->id }}"></i>
+                              @else
+                                <i class="fa fa-square valeur" data-valeur="1" data-id="{{ $anorder['order']->id }}"></i>
+                              @endif
+                              Traité
+                            </button>
                           </div>
-                          <div class="form-check form-check-inline label label-success">
-                            <input class="form-check-input check-status" type="radio" name="status" id="inlineRadio2{{$keys}}" value="option3">
-                            <label class="form-check-label" for="inlineRadio2{{$keys}}">Terminé</label>
+                          <div class="form-check form-check-inline">
+                            <button class="btn btn-sm btn-success btn-check">
+                              @if($anorder['order']->status == 2)
+                                 <i class="fa fa-check-square valeur" data-valeur="2" data-id="{{ $anorder['order']->id }}"></i>
+                              @else
+                               <i class="fa fa-square valeur" data-valeur="2" data-id="{{ $anorder['order']->id }}"></i>
+                              @endif
+                              Terminé
+                          </button>
                           </div>
                         </div>
                           
@@ -191,4 +210,8 @@
         </div>  
         <!--  -->
           </section>
+@stop
+
+@section('js')
+  {!! Html::script('js/admin/status.js') !!}
 @stop

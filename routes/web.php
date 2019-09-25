@@ -88,6 +88,7 @@ Route::namespace('Front')->group(function () {
 
     Route::resource('carta', 'CartController');
     Route::get('/cart/save', 'CartController@enregistrer')->name('front_cart_save');
+    Route::get('/status/change', 'CartController@status')->name('front_cart_status');
     
 });
 
