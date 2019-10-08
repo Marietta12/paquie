@@ -28,4 +28,11 @@ class ProductController extends Controller
         $product = $this->product_repository->findProduct($id);
     	return view('front.product.detailproduct',compact('product'));
     }
+
+    public function filterProduct(Request $request)
+    {
+        $products = $this->product_repository->filterProduct($request->all());
+        //return response()->json(['products'=>$products]);
+        return view('front.product.show-all-product', compact('products'));
+    }
 }
