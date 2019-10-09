@@ -3,9 +3,8 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use App\User;
 
-class blog extends Model
+class Blog extends Model
 {
     /**
      * The attributes that are mass assignable.
