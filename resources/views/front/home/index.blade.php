@@ -55,7 +55,7 @@
 
                         <div class="wrap-btn-slide1 w-size1 animated visible-false" data-appear="rotateIn">
                             <!-- Button -->
-                            <a href="{{ route('front_product') }}" class="flex-c-m size2 bo-rad-23 s-text2 bgwhite hov1 trans-0-4 addtocart" >
+                            <a href="{{ route('front_product') }}" class="flex-c-m size2 bo-rad-23 s-text2 bgwhite hov1 trans-0-4 " >
                                 Acheter
                             </a>
                         </div>

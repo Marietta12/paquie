@@ -3,13 +3,13 @@
 	<!-- Header desktop -->
 	<div class="container-menu-header">
 		<div class="topbar">
-			<div class="topbar-social">
+			<!-- <div class="topbar-social">
 				<a href="#" class="topbar-social-item fa fa-facebook"></a>
 				<a href="#" class="topbar-social-item fa fa-instagram"></a>
 				<a href="#" class="topbar-social-item fa fa-pinterest-p"></a>
 				<a href="#" class="topbar-social-item fa fa-snapchat-ghost"></a>
 				<a href="#" class="topbar-social-item fa fa-youtube-play"></a>
-			</div>
+			</div> -->
 
 			<span class="topbar-child1">
 				Bienvenue dans <strong>RESTOMENU</strong>
@@ -212,13 +212,13 @@
 					</li>
 
 					<li class="item-topbar-mobile p-l-10">
-						<div class="topbar-social-mobile">
+						<!-- <div class="topbar-social-mobile">
 							<a href="#" class="topbar-social-item fa fa-facebook"></a>
 							<a href="#" class="topbar-social-item fa fa-instagram"></a>
 							<a href="#" class="topbar-social-item fa fa-pinterest-p"></a>
 							<a href="#" class="topbar-social-item fa fa-snapchat-ghost"></a>
 							<a href="#" class="topbar-social-item fa fa-youtube-play"></a>
-						</div>
+						</div> -->
 					</li>
 
 					<li class="item-menu-mobile">
