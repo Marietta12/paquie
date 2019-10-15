@@ -73,6 +73,7 @@ Route::middleware(['auth'])->namespace('Admin')->prefix('admin')->group(function
 
 Route::namespace('Front')->group(function () {
     Route::get('/product', 'ProductController@index')->name('front_product');    
+    Route::get('/product_category/{category_id}', 'ProductController@getByCategory')->name('front_product_category'); 
     Route::post('/get_filter_product', 'ProductController@filterProduct')->name('get_filter_product');
     Route::get('/detail_product/{id}', 'ProductController@detailproduct')->name('front_detailproduct');
     Route::get('/blog', 'BlogController@index')->name('front_blog');

@@ -23,6 +23,13 @@ class ProductController extends Controller
     	return view('front.product.index', compact('products'));
     }
 
+    public function getByCategory($category_id)
+    {
+        //dd($category_id);
+        $products = $this->product_repository->getAllProductByCategory($category_id);
+        return view('front.product.index', compact('products'));
+    }
+
     public function detailProduct($id)
     {
         $product = $this->product_repository->findProduct($id);
