@@ -80,7 +80,7 @@
 
                         <div class="block1-wrapbtn w-size2">
                             <!-- Button -->
-                            <a href="#" class="flex-c-m size2 m-text2 bg3 hov1 trans-0-4">
+                            <a href="{{ route('front_product_category', ['category_id' => '18']) }}" class="flex-c-m size2 m-text2 bg3 hov1 trans-0-4">
                                 Entrer
                             </a>
                         </div>
@@ -92,7 +92,7 @@
 
                         <div class="block1-wrapbtn w-size2">
                             <!-- Button -->
-                            <a href="#" class="flex-c-m size2 m-text2 bg3 hov1 trans-0-4">
+                            <a href="{{ route('front_product_category', ['category_id' => '19']) }}" class="flex-c-m size2 m-text2 bg3 hov1 trans-0-4">
                                 Resistance
                             </a>
                         </div>
@@ -106,7 +106,7 @@
 
                         <div class="block1-wrapbtn w-size2">
                             <!-- Button -->
-                            <a href="#" class="flex-c-m size2 m-text2 bg3 hov1 trans-0-4">
+                            <a href="{{ route('front_product_category', ['category_id' => '20']) }}" class="flex-c-m size2 m-text2 bg3 hov1 trans-0-4">
                                 Dessert
                             </a>
                         </div>
@@ -118,7 +118,7 @@
 
                         <div class="block1-wrapbtn w-size2">
                             <!-- Button -->
-                            <a href="#" class="flex-c-m size2 m-text2 bg3 hov1 trans-0-4">
+                            <a href="{{ route('front_product_category', ['category_id' => '22']) }}" class="flex-c-m size2 m-text2 bg3 hov1 trans-0-4">
                                 Boissons et Jus</a>
                         </div>
                     </div>
@@ -131,7 +131,7 @@
 
                         <div class="block1-wrapbtn w-size2">
                             <!-- Button -->
-                            <a href="#" class="flex-c-m size2 m-text2 bg3 hov1 trans-0-4">
+                            <a href="{{ route('front_product_category', ['category_id' => '21']) }}" class="flex-c-m size2 m-text2 bg3 hov1 trans-0-4">
                                 Fast Food
                             </a>
                         </div>
